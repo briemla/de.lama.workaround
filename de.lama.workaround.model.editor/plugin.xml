@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="WorkaroundEditorAdvisorApplication">
+      <application>
+         <run class="workaround.presentation.WorkaroundEditorAdvisor$Application"/>
+      </application>
+   </extension>
+
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+            name="%_UI_Perspective_label"
+            class="workaround.presentation.WorkaroundEditorAdvisor$Perspective"
+            id="workaround.presentation.WorkaroundEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="workaround.presentation.WorkaroundEditorAdvisorOpenURICommand"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="workaround.presentation.WorkaroundEditorAdvisorOpenCommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <key
+            commandId="workaround.presentation.WorkaroundEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="workaround.presentation.WorkaroundEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="%_UI_WorkaroundEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="WorkaroundEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="workaround.presentation.WorkaroundEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="workaround.presentation.WorkaroundEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="workaround.presentation.WorkaroundEditorAdvisorOpenURICommand"
+               class="workaround.presentation.WorkaroundEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="workaround.presentation.WorkaroundEditorAdvisorOpenURIAction"/>
+         <action
+               label="%_UI_Menu_Open_label"
+               definitionId="workaround.presentation.WorkaroundEditorAdvisorOpenCommand"
+               class="workaround.presentation.WorkaroundEditorAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="workaround.presentation.WorkaroundEditorAdvisorOpenAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="%_UI_WorkaroundModelWizard_ActionSet_label"
+            visible="true"
+            id="workaround.presentation.WorkaroundActionBarContributorActionSet">
+         <action
+               label="%_UI_WorkaroundModelWizard_label"
+               class="workaround.presentation.WorkaroundActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="workaround.presentation.WorkaroundActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="workaround.presentation.WorkaroundEditorID"
+            name="%_UI_WorkaroundEditor_label"
+            icon="icons/full/obj16/WorkaroundModelFile.gif"
+            extensions="workaround"
+            class="workaround.presentation.WorkaroundEditor"
+            contributorClass="workaround.presentation.WorkaroundActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Workaround
+Bundle-SymbolicName: de.lama.workaround.rcp; singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: de.lama.workaround.rcp.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms;bundle-version="3.5.100",
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.emf.teneo.hibernate;bundle-version="1.2.0",
+ org.hibernate;bundle-version="3.6.0",
+ org.hsqldb;bundle-version="1.8.1",
+ de.lama.workaround.model;bundle-version="1.0.0",
+ de.lama.workaround.model.edit;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

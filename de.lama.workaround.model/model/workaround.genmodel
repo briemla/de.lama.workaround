@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.lama.workaround.model/src"
+    modelPluginID="de.lama.workaround.model" modelName="Workaround" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false" runtimePlatform="RCP">
+  <foreignModel>workaround.ecore</foreignModel>
+  <genPackages prefix="Workaround" disposableProviderFactory="true" ecorePackage="workaround.ecore#/">
+    <genClasses ecoreClass="workaround.ecore#//Workaround">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/workList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/vehicleList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/machineList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/acreageList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/personList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/jobList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/districtList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/preparationList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/postAreaList"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Operation/task"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Vehicle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Vehicle/licenceNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Vehicle/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Vehicle/automotive"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Job">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/operations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/vehicles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/machines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/acreage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/persons"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/startDriveDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/endDriveDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/remark"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/mechanicalWork"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/preparations"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Machine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Machine/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Machine/handHeld"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Plot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Plot/plotNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Plot/underNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Plot/cadastralArea"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Plot/nettoArea"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Acreage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Acreage/acreageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Acreage/number"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Acreage/district"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Acreage/plotList"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/firstName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Person/postarea"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/birthday"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/housenumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/phone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/mobile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Person/eMail"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//District">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//District/districtName"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//Preparation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Preparation/preparationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Preparation/abbreviation"/>
+    </genClasses>
+    <genClasses ecoreClass="workaround.ecore#//PostArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//PostArea/postcode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//PostArea/district"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

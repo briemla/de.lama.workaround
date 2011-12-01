@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.lama.workaround.rcp.WorkaroundApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.lama.workaround.rcp.Perspective"
+            id="de.lama.workaround.rcp.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="workaroundProduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.lama.workaround.rcp.application"
+            name="Workaround">
+         <property
+               name="appName"
+               value="Workaround">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="de.lama.workaround.rcp.MainEditor"
+            default="true"
+            id="de.lama.workaround.rcp.mainEditor"
+            name="MainEditor">
+      </editor>
+   </extension>
+
+</plugin>
