@@ -6,7 +6,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
@@ -99,7 +98,7 @@ public class MainEditor extends FormEditor implements IEditingDomainProvider
             }
         });
         WorkaroundAdapterFactory adapterFactory = new WorkaroundAdapterFactory();
-        editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack);
+        editingDomain = new WorkaroundEditingDomain(adapterFactory, commandStack);
 
     }
 

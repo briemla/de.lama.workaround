@@ -48,5 +48,30 @@
             name="MainEditor">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.lama.workaround.rcp.toolbarAccessDB">
+            <command
+                  commandId="de.lama.workaround.rcp.loadDataFromMDBCommand"
+                  icon="icons/alt_about.gif"
+                  label="Load data from mdb file"
+                  style="push"
+                  tooltip="Loads the data from the given mdb file">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.lama.workaround.rcp.handler.load.mdb.LoadDataFromMDB"
+            id="de.lama.workaround.rcp.loadDataFromMDBCommand"
+            name="Load data from mdb file">
+      </command>
+   </extension>
 
 </plugin>
