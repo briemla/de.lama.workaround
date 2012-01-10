@@ -12,7 +12,9 @@ public abstract class MDBConnectionManager
         try
         {
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            String url = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=" + accessPath;
+            String url = "jdbc:odbc:Workaround";// Driver={Microsoft Access
+                                                // Driver (*.mdb)};DBQ=" +
+                                                // accessPath;
             return DriverManager.getConnection(url, "", "");
 
         }

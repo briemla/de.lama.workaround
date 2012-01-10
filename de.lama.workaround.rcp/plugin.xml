@@ -57,7 +57,7 @@
                id="de.lama.workaround.rcp.toolbarAccessDB">
             <command
                   commandId="de.lama.workaround.rcp.loadDataFromMDBCommand"
-                  icon="icons/alt_about.gif"
+                  icon="icons/alt_window_16.gif"
                   label="Load data from mdb file"
                   style="push"
                   tooltip="Loads the data from the given mdb file">

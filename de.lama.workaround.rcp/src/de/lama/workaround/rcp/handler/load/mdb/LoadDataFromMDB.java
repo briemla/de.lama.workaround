@@ -6,9 +6,6 @@ import java.sql.SQLException;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.PlatformUI;
 
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.handler.load.mdb.move.MoveAll;
@@ -51,10 +48,11 @@ public class LoadDataFromMDB extends AbstractHandler
 
     private Connection createConnection()
     {
-        Shell activeShell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
-        FileDialog dialog = new FileDialog(activeShell);
-        String accessPath = dialog.open();
-        Connection mdb = MDBConnectionManager.createConnectionFor(accessPath);
+        // Shell activeShell =
+        // PlatformUI.getWorkbench().getDisplay().getActiveShell();
+        // FileDialog dialog = new FileDialog(activeShell);
+        // String accessPath = dialog.open();
+        Connection mdb = MDBConnectionManager.createConnectionFor("");// accessPath);
         return mdb;
     }
 }
