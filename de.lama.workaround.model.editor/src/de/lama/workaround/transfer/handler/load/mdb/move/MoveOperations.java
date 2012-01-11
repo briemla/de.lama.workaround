@@ -4,16 +4,15 @@ import java.sql.Connection;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import workaround.Person;
+import workaround.Operation;
 import workaround.WorkaroundPackage;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.DBKonstanten;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.IExtractStrategie;
-import de.lama.workaround.transfer.handler.load.mdb.move.extractor.PersonExtractStrategie;
 
-public class MovePersons extends Move<Person>
+public class MoveOperations extends Move<Operation>
 {
 
-    public MovePersons(Connection database)
+    public MoveOperations(Connection database)
     {
         super(database);
     }
@@ -21,18 +20,19 @@ public class MovePersons extends Move<Person>
     @Override
     public EStructuralFeature feature()
     {
-        return WorkaroundPackage.Literals.WORKAROUND__PERSON_LIST;
+        return WorkaroundPackage.Literals.WORKAROUND__WORK_LIST;
     }
 
     @Override
     public IExtractStrategie elements()
     {
-        return new PersonExtractStrategie();
+        return new OperationExtractStrategie();
     }
 
     @Override
     public String table()
     {
-        return DBKonstanten.TBL_PERSON;
+        return DBKonstanten.TBL_ARBEITSVORGANG;
     }
+
 }

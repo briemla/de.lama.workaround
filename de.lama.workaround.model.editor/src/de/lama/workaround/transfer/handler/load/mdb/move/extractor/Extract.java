@@ -19,7 +19,7 @@ public class Extract {
 		return new Extract(strategie);
 	}
 
-	public Extract fromTable(String tableName) {
+	public Extract from(String tableName) {
 		this.tableName = tableName;
 		return this;
 	}

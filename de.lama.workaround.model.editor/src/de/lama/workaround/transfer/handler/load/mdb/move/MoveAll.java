@@ -10,4 +10,9 @@ public class MoveAll
         return new MovePersons(connection);
     }
 
+    public static MoveOperations operationsFrom(Connection connection)
+    {
+        return new MoveOperations(connection);
+    }
+
 }

@@ -18,7 +18,7 @@ public abstract class DBKonstanten
     /** Tabellenname: tblArbeitSaatgut */
     public static final String tblArbeitSaatgut = "tblArbeitSaatgut";
     /** Tabellenname: tblArbeitsvorgang */
-    public static final String tblArbeitsvorgang = "tblArbeitsvorgang";
+    public static final String TBL_ARBEITSVORGANG = "tblArbeitsvorgang";
     /** Tabellenname: tblEinsaat */
     public static final String tblEinsaat = "tblEinsaat";
     /** Tabellenname: tblEinsaatSaatgut */
