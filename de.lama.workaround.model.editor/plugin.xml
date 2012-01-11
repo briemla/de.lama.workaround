@@ -37,6 +37,11 @@
             description="%_UI_Menu_Open_description"
             categoryId="org.eclipse.ui.category.file"
             id="workaround.presentation.WorkaroundEditorAdvisorOpenCommand"/>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadDataFromMDB"
+            id="de.lama.workaround.transfer.handler.loadDataFromMDBCommand"
+            name="Load data from MDB file">
+      </command>
    </extension>
 
    <extension point="org.eclipse.ui.bindings">
@@ -97,6 +102,22 @@
             class="workaround.presentation.WorkaroundEditor"
             contributorClass="workaround.presentation.WorkaroundActionBarContributor">
       </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="de.lama.workaround.transfer.toolbarAccessDB">
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadDataFromMDBCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load data from mdb file"
+                  style="push">
+            </command>
+         </toolbar>
+      </menuContribution>
    </extension>
 
 </plugin>

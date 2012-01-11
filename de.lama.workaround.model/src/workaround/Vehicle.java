@@ -29,81 +29,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface Vehicle extends EObject
 {
     /**
-     * Returns the value of the '<em><b>Licence Number</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Licence Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Licence Number</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Licence Number</em>' attribute.
-     * @see #setLicenceNumber(String)
-     * @see workaround.WorkaroundPackage#getVehicle_LicenceNumber()
-     * @model required="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Licence Number</em>' attribute.
+	 * @see #setLicenceNumber(String)
+	 * @see workaround.WorkaroundPackage#getVehicle_LicenceNumber()
+	 * @model required="true"
+	 * @generated
+	 */
     String getLicenceNumber();
 
     /**
-     * Sets the value of the '{@link workaround.Vehicle#getLicenceNumber <em>Licence Number</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link workaround.Vehicle#getLicenceNumber <em>Licence Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Licence Number</em>' attribute.
-     * @see #getLicenceNumber()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Licence Number</em>' attribute.
+	 * @see #getLicenceNumber()
+	 * @generated
+	 */
     void setLicenceNumber(String value);
 
     /**
-     * Returns the value of the '<em><b>Description</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Description</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Description</em>' attribute.
-     * @see #setDescription(String)
-     * @see workaround.WorkaroundPackage#getVehicle_Description()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see workaround.WorkaroundPackage#getVehicle_Description()
+	 * @model
+	 * @generated
+	 */
     String getDescription();
 
     /**
-     * Sets the value of the '{@link workaround.Vehicle#getDescription <em>Description</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link workaround.Vehicle#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Description</em>' attribute.
-     * @see #getDescription()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
     void setDescription(String value);
 
     /**
-     * Returns the value of the '<em><b>Automotive</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Automotive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Automotive</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Automotive</em>' attribute.
-     * @see #setAutomotive(Boolean)
-     * @see workaround.WorkaroundPackage#getVehicle_Automotive()
-     * @model
-     * @generated
-     */
+	 * @return the value of the '<em>Automotive</em>' attribute.
+	 * @see #setAutomotive(Boolean)
+	 * @see workaround.WorkaroundPackage#getVehicle_Automotive()
+	 * @model
+	 * @generated
+	 */
     Boolean getAutomotive();
 
     /**
-     * Sets the value of the '{@link workaround.Vehicle#getAutomotive <em>Automotive</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link workaround.Vehicle#getAutomotive <em>Automotive</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Automotive</em>' attribute.
-     * @see #getAutomotive()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Automotive</em>' attribute.
+	 * @see #getAutomotive()
+	 * @generated
+	 */
     void setAutomotive(Boolean value);
 
 } // Vehicle

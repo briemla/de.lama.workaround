@@ -44,147 +44,145 @@ public class PreparationItemProvider
         IItemPropertySource
 {
     /**
-     * This constructs an instance from a factory and a notifier.
-     * <!-- begin-user-doc -->
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public PreparationItemProvider(AdapterFactory adapterFactory)
     {
-        super(adapterFactory);
-    }
+		super(adapterFactory);
+	}
 
     /**
-     * This returns the property descriptors for the adapted class.
-     * <!-- begin-user-doc -->
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public List getPropertyDescriptors(Object object)
     {
-        if (itemPropertyDescriptors == null)
-        {
-            super.getPropertyDescriptors(object);
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-            addPreparationNamePropertyDescriptor(object);
-            addAbbreviationPropertyDescriptor(object);
-        }
-        return itemPropertyDescriptors;
-    }
+			addPreparationNamePropertyDescriptor(object);
+			addAbbreviationPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
 
     /**
-     * This adds a property descriptor for the Preparation Name feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Preparation Name feature.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected void addPreparationNamePropertyDescriptor(Object object)
     {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Preparation_preparationName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Preparation_preparationName_feature", "_UI_Preparation_type"),
-                 WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME,
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Preparation_preparationName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Preparation_preparationName_feature", "_UI_Preparation_type"),
+				 WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
     /**
-     * This adds a property descriptor for the Abbreviation feature.
-     * <!-- begin-user-doc -->
+	 * This adds a property descriptor for the Abbreviation feature.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected void addAbbreviationPropertyDescriptor(Object object)
     {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Preparation_abbreviation_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Preparation_abbreviation_feature", "_UI_Preparation_type"),
-                 WorkaroundPackage.Literals.PREPARATION__ABBREVIATION,
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Preparation_abbreviation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Preparation_abbreviation_feature", "_UI_Preparation_type"),
+				 WorkaroundPackage.Literals.PREPARATION__ABBREVIATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
 
     /**
-     * This returns Preparation.gif.
-     * <!-- begin-user-doc -->
+	 * This returns Preparation.gif.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Object getImage(Object object)
     {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Preparation"));
-    }
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Preparation"));
+	}
 
     /**
-     * This returns the label text for the adapted class.
-     * <!-- begin-user-doc -->
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getText(Object object)
     {
-        String label = ((Preparation)object).getPreparationName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Preparation_type") :
-            getString("_UI_Preparation_type") + " " + label;
-    }
+		String label = ((Preparation)object).getPreparationName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Preparation_type") :
+			getString("_UI_Preparation_type") + " " + label;
+	}
 
     /**
-     * This handles model notifications by calling {@link #updateChildren} to update any cached
-     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-     * <!-- begin-user-doc -->
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void notifyChanged(Notification notification)
     {
-        updateChildren(notification);
+		updateChildren(notification);
 
-        switch (notification.getFeatureID(Preparation.class))
-        {
-            case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
-            case WorkaroundPackage.PREPARATION__ABBREVIATION:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-        }
-        super.notifyChanged(notification);
-    }
+		switch (notification.getFeatureID(Preparation.class)) {
+			case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
+			case WorkaroundPackage.PREPARATION__ABBREVIATION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
 
     /**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-     * that can be created under this object.
-     * <!-- begin-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object)
     {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
-    }
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
 
     /**
-     * Return the resource locator for this item provider's resources.
-     * <!-- begin-user-doc -->
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ResourceLocator getResourceLocator()
     {
-        return WorkaroundEditPlugin.INSTANCE;
-    }
+		return WorkaroundEditPlugin.INSTANCE;
+	}
 
 }

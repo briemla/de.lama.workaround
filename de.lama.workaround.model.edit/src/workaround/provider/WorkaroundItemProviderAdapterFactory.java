@@ -39,427 +39,413 @@ import workaround.util.WorkaroundAdapterFactory;
 public class WorkaroundItemProviderAdapterFactory extends WorkaroundAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
 {
     /**
-     * This keeps track of the root adapter factory that delegates to this adapter factory.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ComposedAdapterFactory parentAdapterFactory;
 
     /**
-     * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
-     * <!-- begin-user-doc -->
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
     /**
-     * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
-     * <!-- begin-user-doc -->
+	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected Collection supportedTypes = new ArrayList();
 
     /**
-     * This constructs an instance.
-     * <!-- begin-user-doc -->
+	 * This constructs an instance.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public WorkaroundItemProviderAdapterFactory()
     {
-        supportedTypes.add(IEditingDomainItemProvider.class);
-        supportedTypes.add(IStructuredItemContentProvider.class);
-        supportedTypes.add(ITreeItemContentProvider.class);
-        supportedTypes.add(IItemLabelProvider.class);
-        supportedTypes.add(IItemPropertySource.class);
-    }
+		supportedTypes.add(IEditingDomainItemProvider.class);
+		supportedTypes.add(IStructuredItemContentProvider.class);
+		supportedTypes.add(ITreeItemContentProvider.class);
+		supportedTypes.add(IItemLabelProvider.class);
+		supportedTypes.add(IItemPropertySource.class);
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Workaround} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Workaround} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected WorkaroundItemProvider workaroundItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Workaround}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Workaround}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createWorkaroundAdapter()
     {
-        if (workaroundItemProvider == null)
-        {
-            workaroundItemProvider = new WorkaroundItemProvider(this);
-        }
+		if (workaroundItemProvider == null) {
+			workaroundItemProvider = new WorkaroundItemProvider(this);
+		}
 
-        return workaroundItemProvider;
-    }
+		return workaroundItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Operation} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Operation} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected OperationItemProvider operationItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Operation}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Operation}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createOperationAdapter()
     {
-        if (operationItemProvider == null)
-        {
-            operationItemProvider = new OperationItemProvider(this);
-        }
+		if (operationItemProvider == null) {
+			operationItemProvider = new OperationItemProvider(this);
+		}
 
-        return operationItemProvider;
-    }
+		return operationItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Vehicle} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Vehicle} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected VehicleItemProvider vehicleItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Vehicle}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Vehicle}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createVehicleAdapter()
     {
-        if (vehicleItemProvider == null)
-        {
-            vehicleItemProvider = new VehicleItemProvider(this);
-        }
+		if (vehicleItemProvider == null) {
+			vehicleItemProvider = new VehicleItemProvider(this);
+		}
 
-        return vehicleItemProvider;
-    }
+		return vehicleItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Job} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Job} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected JobItemProvider jobItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Job}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Job}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createJobAdapter()
     {
-        if (jobItemProvider == null)
-        {
-            jobItemProvider = new JobItemProvider(this);
-        }
+		if (jobItemProvider == null) {
+			jobItemProvider = new JobItemProvider(this);
+		}
 
-        return jobItemProvider;
-    }
+		return jobItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Machine} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Machine} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected MachineItemProvider machineItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Machine}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Machine}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createMachineAdapter()
     {
-        if (machineItemProvider == null)
-        {
-            machineItemProvider = new MachineItemProvider(this);
-        }
+		if (machineItemProvider == null) {
+			machineItemProvider = new MachineItemProvider(this);
+		}
 
-        return machineItemProvider;
-    }
+		return machineItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Plot} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Plot} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected PlotItemProvider plotItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Plot}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Plot}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createPlotAdapter()
     {
-        if (plotItemProvider == null)
-        {
-            plotItemProvider = new PlotItemProvider(this);
-        }
+		if (plotItemProvider == null) {
+			plotItemProvider = new PlotItemProvider(this);
+		}
 
-        return plotItemProvider;
-    }
+		return plotItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Acreage} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Acreage} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected AcreageItemProvider acreageItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Acreage}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Acreage}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createAcreageAdapter()
     {
-        if (acreageItemProvider == null)
-        {
-            acreageItemProvider = new AcreageItemProvider(this);
-        }
+		if (acreageItemProvider == null) {
+			acreageItemProvider = new AcreageItemProvider(this);
+		}
 
-        return acreageItemProvider;
-    }
+		return acreageItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Person} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Person} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected PersonItemProvider personItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Person}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Person}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createPersonAdapter()
     {
-        if (personItemProvider == null)
-        {
-            personItemProvider = new PersonItemProvider(this);
-        }
+		if (personItemProvider == null) {
+			personItemProvider = new PersonItemProvider(this);
+		}
 
-        return personItemProvider;
-    }
+		return personItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.District} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.District} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected DistrictItemProvider districtItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.District}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.District}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createDistrictAdapter()
     {
-        if (districtItemProvider == null)
-        {
-            districtItemProvider = new DistrictItemProvider(this);
-        }
+		if (districtItemProvider == null) {
+			districtItemProvider = new DistrictItemProvider(this);
+		}
 
-        return districtItemProvider;
-    }
+		return districtItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.Preparation} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.Preparation} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected PreparationItemProvider preparationItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.Preparation}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.Preparation}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createPreparationAdapter()
     {
-        if (preparationItemProvider == null)
-        {
-            preparationItemProvider = new PreparationItemProvider(this);
-        }
+		if (preparationItemProvider == null) {
+			preparationItemProvider = new PreparationItemProvider(this);
+		}
 
-        return preparationItemProvider;
-    }
+		return preparationItemProvider;
+	}
 
     /**
-     * This keeps track of the one adapter used for all {@link workaround.PostArea} instances.
-     * <!-- begin-user-doc -->
+	 * This keeps track of the one adapter used for all {@link workaround.PostArea} instances.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected PostAreaItemProvider postAreaItemProvider;
 
     /**
-     * This creates an adapter for a {@link workaround.PostArea}.
-     * <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link workaround.PostArea}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter createPostAreaAdapter()
     {
-        if (postAreaItemProvider == null)
-        {
-            postAreaItemProvider = new PostAreaItemProvider(this);
-        }
+		if (postAreaItemProvider == null) {
+			postAreaItemProvider = new PostAreaItemProvider(this);
+		}
 
-        return postAreaItemProvider;
-    }
+		return postAreaItemProvider;
+	}
 
     /**
-     * This returns the root adapter factory that contains this factory.
-     * <!-- begin-user-doc -->
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ComposeableAdapterFactory getRootAdapterFactory()
     {
-        return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
-    }
+		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
+	}
 
     /**
-     * This sets the composed adapter factory that contains this factory.
-     * <!-- begin-user-doc -->
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
     {
-        this.parentAdapterFactory = parentAdapterFactory;
-    }
+		this.parentAdapterFactory = parentAdapterFactory;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isFactoryForType(Object type)
     {
-        return supportedTypes.contains(type) || super.isFactoryForType(type);
-    }
+		return supportedTypes.contains(type) || super.isFactoryForType(type);
+	}
 
     /**
-     * This implementation substitutes the factory itself as the key for the adapter.
-     * <!-- begin-user-doc -->
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Adapter adapt(Notifier notifier, Object type)
     {
-        return super.adapt(notifier, this);
-    }
+		return super.adapt(notifier, this);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Object adapt(Object object, Object type)
     {
-        if (isFactoryForType(type))
-        {
-            Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class) || (((Class)type).isInstance(adapter)))
-            {
-                return adapter;
-            }
-        }
+		if (isFactoryForType(type)) {
+			Object adapter = super.adapt(object, type);
+			if (!(type instanceof Class) || (((Class)type).isInstance(adapter))) {
+				return adapter;
+			}
+		}
 
-        return null;
-    }
+		return null;
+	}
 
     /**
-     * This adds a listener.
-     * <!-- begin-user-doc -->
+	 * This adds a listener.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void addListener(INotifyChangedListener notifyChangedListener)
     {
-        changeNotifier.addListener(notifyChangedListener);
-    }
+		changeNotifier.addListener(notifyChangedListener);
+	}
 
     /**
-     * This removes a listener.
-     * <!-- begin-user-doc -->
+	 * This removes a listener.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void removeListener(INotifyChangedListener notifyChangedListener)
     {
-        changeNotifier.removeListener(notifyChangedListener);
-    }
+		changeNotifier.removeListener(notifyChangedListener);
+	}
 
     /**
-     * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
-     * <!-- begin-user-doc -->
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void fireNotifyChanged(Notification notification)
     {
-        changeNotifier.fireNotifyChanged(notification);
+		changeNotifier.fireNotifyChanged(notification);
 
-        if (parentAdapterFactory != null)
-        {
-            parentAdapterFactory.fireNotifyChanged(notification);
-        }
-    }
+		if (parentAdapterFactory != null) {
+			parentAdapterFactory.fireNotifyChanged(notification);
+		}
+	}
 
     /**
-     * This disposes all of the item providers created by this factory. 
-     * <!-- begin-user-doc -->
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void dispose()
     {
-        if (workaroundItemProvider != null) workaroundItemProvider.dispose();
-        if (operationItemProvider != null) operationItemProvider.dispose();
-        if (vehicleItemProvider != null) vehicleItemProvider.dispose();
-        if (jobItemProvider != null) jobItemProvider.dispose();
-        if (machineItemProvider != null) machineItemProvider.dispose();
-        if (plotItemProvider != null) plotItemProvider.dispose();
-        if (acreageItemProvider != null) acreageItemProvider.dispose();
-        if (personItemProvider != null) personItemProvider.dispose();
-        if (districtItemProvider != null) districtItemProvider.dispose();
-        if (preparationItemProvider != null) preparationItemProvider.dispose();
-        if (postAreaItemProvider != null) postAreaItemProvider.dispose();
-    }
+		if (workaroundItemProvider != null) workaroundItemProvider.dispose();
+		if (operationItemProvider != null) operationItemProvider.dispose();
+		if (vehicleItemProvider != null) vehicleItemProvider.dispose();
+		if (jobItemProvider != null) jobItemProvider.dispose();
+		if (machineItemProvider != null) machineItemProvider.dispose();
+		if (plotItemProvider != null) plotItemProvider.dispose();
+		if (acreageItemProvider != null) acreageItemProvider.dispose();
+		if (personItemProvider != null) personItemProvider.dispose();
+		if (districtItemProvider != null) districtItemProvider.dispose();
+		if (preparationItemProvider != null) preparationItemProvider.dispose();
+		if (postAreaItemProvider != null) postAreaItemProvider.dispose();
+	}
 
 }

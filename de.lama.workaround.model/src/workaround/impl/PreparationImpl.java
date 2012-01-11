@@ -33,199 +33,195 @@ import workaround.WorkaroundPackage;
 public class PreparationImpl extends EObjectImpl implements Preparation
 {
     /**
-     * The default value of the '{@link #getPreparationName() <em>Preparation Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPreparationName() <em>Preparation Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPreparationName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPreparationName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PREPARATION_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPreparationName() <em>Preparation Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPreparationName() <em>Preparation Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPreparationName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPreparationName()
+	 * @generated
+	 * @ordered
+	 */
     protected String preparationName = PREPARATION_NAME_EDEFAULT;
 
     /**
-     * The default value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAbbreviation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAbbreviation()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ABBREVIATION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAbbreviation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAbbreviation()
+	 * @generated
+	 * @ordered
+	 */
     protected String abbreviation = ABBREVIATION_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected PreparationImpl()
     {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected EClass eStaticClass()
     {
-        return WorkaroundPackage.Literals.PREPARATION;
-    }
+		return WorkaroundPackage.Literals.PREPARATION;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getPreparationName()
     {
-        return preparationName;
-    }
+		return preparationName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPreparationName(String newPreparationName)
     {
-        String oldPreparationName = preparationName;
-        preparationName = newPreparationName;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.PREPARATION__PREPARATION_NAME, oldPreparationName, preparationName));
-    }
+		String oldPreparationName = preparationName;
+		preparationName = newPreparationName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.PREPARATION__PREPARATION_NAME, oldPreparationName, preparationName));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getAbbreviation()
     {
-        return abbreviation;
-    }
+		return abbreviation;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAbbreviation(String newAbbreviation)
     {
-        String oldAbbreviation = abbreviation;
-        abbreviation = newAbbreviation;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.PREPARATION__ABBREVIATION, oldAbbreviation, abbreviation));
-    }
+		String oldAbbreviation = abbreviation;
+		abbreviation = newAbbreviation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.PREPARATION__ABBREVIATION, oldAbbreviation, abbreviation));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Object eGet(int featureID, boolean resolve, boolean coreType)
     {
-        switch (featureID)
-        {
-            case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
-                return getPreparationName();
-            case WorkaroundPackage.PREPARATION__ABBREVIATION:
-                return getAbbreviation();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
+				return getPreparationName();
+			case WorkaroundPackage.PREPARATION__ABBREVIATION:
+				return getAbbreviation();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void eSet(int featureID, Object newValue)
     {
-        switch (featureID)
-        {
-            case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
-                setPreparationName((String)newValue);
-                return;
-            case WorkaroundPackage.PREPARATION__ABBREVIATION:
-                setAbbreviation((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
+				setPreparationName((String)newValue);
+				return;
+			case WorkaroundPackage.PREPARATION__ABBREVIATION:
+				setAbbreviation((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void eUnset(int featureID)
     {
-        switch (featureID)
-        {
-            case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
-                setPreparationName(PREPARATION_NAME_EDEFAULT);
-                return;
-            case WorkaroundPackage.PREPARATION__ABBREVIATION:
-                setAbbreviation(ABBREVIATION_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
+				setPreparationName(PREPARATION_NAME_EDEFAULT);
+				return;
+			case WorkaroundPackage.PREPARATION__ABBREVIATION:
+				setAbbreviation(ABBREVIATION_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean eIsSet(int featureID)
     {
-        switch (featureID)
-        {
-            case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
-                return PREPARATION_NAME_EDEFAULT == null ? preparationName != null : !PREPARATION_NAME_EDEFAULT.equals(preparationName);
-            case WorkaroundPackage.PREPARATION__ABBREVIATION:
-                return ABBREVIATION_EDEFAULT == null ? abbreviation != null : !ABBREVIATION_EDEFAULT.equals(abbreviation);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case WorkaroundPackage.PREPARATION__PREPARATION_NAME:
+				return PREPARATION_NAME_EDEFAULT == null ? preparationName != null : !PREPARATION_NAME_EDEFAULT.equals(preparationName);
+			case WorkaroundPackage.PREPARATION__ABBREVIATION:
+				return ABBREVIATION_EDEFAULT == null ? abbreviation != null : !ABBREVIATION_EDEFAULT.equals(abbreviation);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String toString()
     {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (preparationName: ");
-        result.append(preparationName);
-        result.append(", abbreviation: ");
-        result.append(abbreviation);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (preparationName: ");
+		result.append(preparationName);
+		result.append(", abbreviation: ");
+		result.append(abbreviation);
+		result.append(')');
+		return result.toString();
+	}
 
 } //PreparationImpl
