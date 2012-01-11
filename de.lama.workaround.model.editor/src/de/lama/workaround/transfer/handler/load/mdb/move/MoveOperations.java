@@ -8,6 +8,7 @@ import workaround.Operation;
 import workaround.WorkaroundPackage;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.DBKonstanten;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.IExtractStrategie;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.OperationExtractStrategie;
 
 public class MoveOperations extends Move<Operation>
 {

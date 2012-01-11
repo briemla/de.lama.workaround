@@ -1,4 +1,4 @@
-package de.lama.workaround.transfer.handler.load.mdb.move;
+package de.lama.workaround.transfer.handler.load.mdb.move.extractor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,8 +7,6 @@ import java.util.List;
 
 import workaround.Operation;
 import workaround.WorkaroundFactory;
-import de.lama.workaround.transfer.handler.load.mdb.move.extractor.AbstractExtractStrategie;
-import de.lama.workaround.transfer.handler.load.mdb.move.extractor.DBKonstanten;
 
 public class OperationExtractStrategie extends AbstractExtractStrategie
 {
