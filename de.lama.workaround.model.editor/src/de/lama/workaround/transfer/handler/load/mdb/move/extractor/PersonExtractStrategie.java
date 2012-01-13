@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import workaround.Person;
@@ -14,8 +15,7 @@ import workaround.WorkaroundPackage;
 public class PersonExtractStrategie extends AbstractExtractStrategie<Person>
 {
 
-    @Override
-    public List<Person> extractFrom(ResultSet tableResult) throws SQLException
+    public List<Person> from(ResultSet tableResult) throws SQLException
     {
         List<Person> persons = new ArrayList<Person>();
         while (tableResult.next())
@@ -27,6 +27,11 @@ public class PersonExtractStrategie extends AbstractExtractStrategie<Person>
             tableColumn = DBKonstanten.vorname;
             String vorname = extractStringFrom(tableResult, tableColumn);
             nextPerson.setFirstName(vorname);
+
+            if (installedElementsContains(nextPerson))
+            {
+                continue;
+            }
             persons.add(nextPerson);
         }
         return persons;
@@ -44,4 +49,9 @@ public class PersonExtractStrategie extends AbstractExtractStrategie<Person>
         return DBKonstanten.TBL_PERSON;
     }
 
+    @Override
+    protected EList<Person> installedElements()
+    {
+        return getOwner().getPersonList();
+    }
 }

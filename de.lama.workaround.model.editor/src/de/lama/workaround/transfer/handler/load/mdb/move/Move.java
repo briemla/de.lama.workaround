@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.AddCommand;
 
+import workaround.Workaround;
 import workaround.presentation.WorkaroundEditingDomain;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.Extract;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.IExtractStrategie;
@@ -31,20 +31,21 @@ public class Move<T>
         return this;
     }
 
+    @SuppressWarnings("unchecked")
     public void into(WorkaroundEditingDomain editingDomain) throws SQLException
     {
         this.editingDomain = editingDomain;
-        List<T> persons = read();
-        EObject owner = editingDomain.getWorkaround();
+        Workaround owner = editingDomain.getWorkaround();
+        List<T> persons = read(owner);
         insertInto(owner, persons);
     }
 
-    public List<T> read() throws SQLException
+    public List<T> read(Workaround owner) throws SQLException
     {
-        return new Extract<T>(strategie).from(database);
+        return new Extract<T>(strategie).from(database).with(owner);
     }
 
-    public void insertInto(EObject owner, List<T> elements)
+    public void insertInto(Workaround owner, List<T> elements)
     {
         Command command = AddCommand.create(editingDomain, owner, strategie.feature(), elements);
         EditorUtilities.getEditingDomain().getCommandStack().execute(command);

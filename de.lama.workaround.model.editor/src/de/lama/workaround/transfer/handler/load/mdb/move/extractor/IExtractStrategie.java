@@ -6,10 +6,14 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import workaround.Workaround;
+
 public interface IExtractStrategie<T>
 {
 
-    public List<T> extractFrom(ResultSet tableResult) throws SQLException;
+    public IExtractStrategie<T> extract(Workaround owner);
+
+    public List<T> from(ResultSet tableResult) throws SQLException;
 
     /**
      * Returns the <code>EStructuralFeature</code> for this move operation.

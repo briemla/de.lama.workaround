@@ -6,21 +6,30 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import workaround.Workaround;
+
 public class Extract<T>
 {
 
-    private IExtractStrategie<T> strategie;
+    private final IExtractStrategie<T> strategie;
+    private Connection database;
 
     public Extract(IExtractStrategie<T> strategie)
     {
         this.strategie = strategie;
     }
 
-    public List<T> from(Connection database) throws SQLException
+    public Extract<T> from(Connection database)
+    {
+        this.database = database;
+        return this;
+    }
+
+    public List<T> with(Workaround owner) throws SQLException
     {
         Statement statement = database.createStatement();
         ResultSet tableResult = statement.executeQuery("SELECT * FROM " + strategie.table());
-        return strategie.extractFrom(tableResult);
+        return strategie.extract(owner).from(tableResult);
     }
 
 }
