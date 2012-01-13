@@ -3,8 +3,7 @@ package de.lama.workaround.transfer.handler.load.mdb.move.extractor;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
-public abstract class AbstractExtractStrategie implements IExtractStrategie
+public abstract class AbstractExtractStrategie<T> implements IExtractStrategie<T>
 {
 
     protected String extractStringFrom(ResultSet tableResult, String tableColumn) throws SQLException
