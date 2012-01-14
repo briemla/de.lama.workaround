@@ -33,7 +33,7 @@ public class OperationExtractStrategie extends AbstractExtractStrategie<Operatio
     @Override
     public EStructuralFeature feature()
     {
-        return WorkaroundPackage.Literals.WORKAROUND__WORK_LIST;
+        return WorkaroundPackage.Literals.WORKAROUND__OPERATION_LIST;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class OperationExtractStrategie extends AbstractExtractStrategie<Operatio
     @Override
     protected EList<Operation> installedElements()
     {
-        return getOwner().getWorkList();
+        return getOwner().getOperationList();
     }
 
 }

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link workaround.Workaround#getWorkList <em>Work List</em>}</li>
+ *   <li>{@link workaround.Workaround#getOperationList <em>Operation List</em>}</li>
  *   <li>{@link workaround.Workaround#getVehicleList <em>Vehicle List</em>}</li>
  *   <li>{@link workaround.Workaround#getMachineList <em>Machine List</em>}</li>
  *   <li>{@link workaround.Workaround#getAcreageList <em>Acreage List</em>}</li>
@@ -37,147 +37,147 @@ import org.eclipse.emf.ecore.EObject;
 public interface Workaround extends EObject
 {
     /**
-	 * Returns the value of the '<em><b>Work List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Operation}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Operation List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Operation}.
+     * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Work List</em>' containment reference list isn't clear,
+     * If the meaning of the '<em>Operation List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Work List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_WorkList()
-	 * @model type="workaround.Operation" containment="true"
-	 * @generated
-	 */
-    EList getWorkList();
+     * @return the value of the '<em>Operation List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_OperationList()
+     * @model type="workaround.Operation" containment="true"
+     * @generated
+     */
+    EList getOperationList();
 
     /**
-	 * Returns the value of the '<em><b>Vehicle List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Vehicle}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Vehicle List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Vehicle}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Vehicle List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vehicle List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_VehicleList()
-	 * @model type="workaround.Vehicle" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Vehicle List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_VehicleList()
+     * @model type="workaround.Vehicle" containment="true"
+     * @generated
+     */
     EList getVehicleList();
 
     /**
-	 * Returns the value of the '<em><b>Machine List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Machine}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Machine List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Machine}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Machine List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Machine List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_MachineList()
-	 * @model type="workaround.Machine" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Machine List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_MachineList()
+     * @model type="workaround.Machine" containment="true"
+     * @generated
+     */
     EList getMachineList();
 
     /**
-	 * Returns the value of the '<em><b>Acreage List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Acreage}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Acreage List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Acreage}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Acreage List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Acreage List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_AcreageList()
-	 * @model type="workaround.Acreage" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Acreage List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_AcreageList()
+     * @model type="workaround.Acreage" containment="true"
+     * @generated
+     */
     EList getAcreageList();
 
     /**
-	 * Returns the value of the '<em><b>Person List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Person}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Person List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Person}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Person List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Person List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_PersonList()
-	 * @model type="workaround.Person" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Person List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_PersonList()
+     * @model type="workaround.Person" containment="true"
+     * @generated
+     */
     EList getPersonList();
 
     /**
-	 * Returns the value of the '<em><b>Job List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Job}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Job List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Job}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Job List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Job List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_JobList()
-	 * @model type="workaround.Job" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Job List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_JobList()
+     * @model type="workaround.Job" containment="true"
+     * @generated
+     */
     EList getJobList();
 
     /**
-	 * Returns the value of the '<em><b>District List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.District}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>District List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.District}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>District List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>District List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_DistrictList()
-	 * @model type="workaround.District" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>District List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_DistrictList()
+     * @model type="workaround.District" containment="true"
+     * @generated
+     */
     EList getDistrictList();
 
     /**
-	 * Returns the value of the '<em><b>Preparation List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.Preparation}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Preparation List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.Preparation}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Preparation List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Preparation List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_PreparationList()
-	 * @model type="workaround.Preparation" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Preparation List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_PreparationList()
+     * @model type="workaround.Preparation" containment="true"
+     * @generated
+     */
     EList getPreparationList();
 
     /**
-	 * Returns the value of the '<em><b>Post Area List</b></em>' containment reference list.
-	 * The list contents are of type {@link workaround.PostArea}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Post Area List</b></em>' containment reference list.
+     * The list contents are of type {@link workaround.PostArea}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Post Area List</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-	 * @return the value of the '<em>Post Area List</em>' containment reference list.
-	 * @see workaround.WorkaroundPackage#getWorkaround_PostAreaList()
-	 * @model type="workaround.PostArea" containment="true"
-	 * @generated
-	 */
+     * @return the value of the '<em>Post Area List</em>' containment reference list.
+     * @see workaround.WorkaroundPackage#getWorkaround_PostAreaList()
+     * @model type="workaround.PostArea" containment="true"
+     * @generated
+     */
     EList getPostAreaList();
 
 } // Workaround

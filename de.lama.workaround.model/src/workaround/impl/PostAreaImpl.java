@@ -35,202 +35,208 @@ import workaround.WorkaroundPackage;
 public class PostAreaImpl extends EObjectImpl implements PostArea
 {
     /**
-	 * The default value of the '{@link #getPostcode() <em>Postcode</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getPostcode() <em>Postcode</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getPostcode()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getPostcode()
+     * @generated
+     * @ordered
+     */
     protected static final Integer POSTCODE_EDEFAULT = null;
 
     /**
-	 * The cached value of the '{@link #getPostcode() <em>Postcode</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getPostcode() <em>Postcode</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getPostcode()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getPostcode()
+     * @generated
+     * @ordered
+     */
     protected Integer postcode = POSTCODE_EDEFAULT;
 
     /**
-	 * The cached value of the '{@link #getDistrict() <em>District</em>}' reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getDistrict() <em>District</em>}' reference.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getDistrict()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getDistrict()
+     * @generated
+     * @ordered
+     */
     protected District district;
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected PostAreaImpl()
     {
-		super();
-	}
+        super();
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected EClass eStaticClass()
     {
-		return WorkaroundPackage.Literals.POST_AREA;
-	}
+        return WorkaroundPackage.Literals.POST_AREA;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public Integer getPostcode()
     {
-		return postcode;
-	}
+        return postcode;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void setPostcode(Integer newPostcode)
     {
-		Integer oldPostcode = postcode;
-		postcode = newPostcode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.POST_AREA__POSTCODE, oldPostcode, postcode));
-	}
+        Integer oldPostcode = postcode;
+        postcode = newPostcode;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.POST_AREA__POSTCODE, oldPostcode, postcode));
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public District getDistrict()
     {
-		if (district != null && district.eIsProxy()) {
-			InternalEObject oldDistrict = (InternalEObject)district;
-			district = (District)eResolveProxy(oldDistrict);
-			if (district != oldDistrict) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkaroundPackage.POST_AREA__DISTRICT, oldDistrict, district));
-			}
-		}
-		return district;
-	}
+        if (district != null && district.eIsProxy())
+        {
+            InternalEObject oldDistrict = (InternalEObject)district;
+            district = (District)eResolveProxy(oldDistrict);
+            if (district != oldDistrict)
+            {
+                if (eNotificationRequired())
+                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkaroundPackage.POST_AREA__DISTRICT, oldDistrict, district));
+            }
+        }
+        return district;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public District basicGetDistrict()
     {
-		return district;
-	}
+        return district;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void setDistrict(District newDistrict)
     {
-		District oldDistrict = district;
-		district = newDistrict;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.POST_AREA__DISTRICT, oldDistrict, district));
-	}
+        District oldDistrict = district;
+        district = newDistrict;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.POST_AREA__DISTRICT, oldDistrict, district));
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public Object eGet(int featureID, boolean resolve, boolean coreType)
     {
-		switch (featureID) {
-			case WorkaroundPackage.POST_AREA__POSTCODE:
-				return getPostcode();
-			case WorkaroundPackage.POST_AREA__DISTRICT:
-				if (resolve) return getDistrict();
-				return basicGetDistrict();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.POST_AREA__POSTCODE:
+                return getPostcode();
+            case WorkaroundPackage.POST_AREA__DISTRICT:
+                if (resolve) return getDistrict();
+                return basicGetDistrict();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void eSet(int featureID, Object newValue)
     {
-		switch (featureID) {
-			case WorkaroundPackage.POST_AREA__POSTCODE:
-				setPostcode((Integer)newValue);
-				return;
-			case WorkaroundPackage.POST_AREA__DISTRICT:
-				setDistrict((District)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.POST_AREA__POSTCODE:
+                setPostcode((Integer)newValue);
+                return;
+            case WorkaroundPackage.POST_AREA__DISTRICT:
+                setDistrict((District)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void eUnset(int featureID)
     {
-		switch (featureID) {
-			case WorkaroundPackage.POST_AREA__POSTCODE:
-				setPostcode(POSTCODE_EDEFAULT);
-				return;
-			case WorkaroundPackage.POST_AREA__DISTRICT:
-				setDistrict((District)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.POST_AREA__POSTCODE:
+                setPostcode(POSTCODE_EDEFAULT);
+                return;
+            case WorkaroundPackage.POST_AREA__DISTRICT:
+                setDistrict((District)null);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public boolean eIsSet(int featureID)
     {
-		switch (featureID) {
-			case WorkaroundPackage.POST_AREA__POSTCODE:
-				return POSTCODE_EDEFAULT == null ? postcode != null : !POSTCODE_EDEFAULT.equals(postcode);
-			case WorkaroundPackage.POST_AREA__DISTRICT:
-				return district != null;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.POST_AREA__POSTCODE:
+                return POSTCODE_EDEFAULT == null ? postcode != null : !POSTCODE_EDEFAULT.equals(postcode);
+            case WorkaroundPackage.POST_AREA__DISTRICT:
+                return district != null;
+        }
+        return super.eIsSet(featureID);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public String toString()
     {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (postcode: ");
-		result.append(postcode);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (postcode: ");
+        result.append(postcode);
+        result.append(')');
+        return result.toString();
+    }
 
 } //PostAreaImpl

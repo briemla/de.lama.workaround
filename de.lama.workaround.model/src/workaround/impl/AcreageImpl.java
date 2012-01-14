@@ -46,305 +46,313 @@ import workaround.WorkaroundPackage;
 public class AcreageImpl extends EObjectImpl implements Acreage
 {
     /**
-	 * The default value of the '{@link #getAcreageName() <em>Acreage Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getAcreageName() <em>Acreage Name</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getAcreageName()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAcreageName()
+     * @generated
+     * @ordered
+     */
     protected static final String ACREAGE_NAME_EDEFAULT = null;
 
     /**
-	 * The cached value of the '{@link #getAcreageName() <em>Acreage Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getAcreageName() <em>Acreage Name</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getAcreageName()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAcreageName()
+     * @generated
+     * @ordered
+     */
     protected String acreageName = ACREAGE_NAME_EDEFAULT;
 
     /**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getNumber()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getNumber()
+     * @generated
+     * @ordered
+     */
     protected static final String NUMBER_EDEFAULT = null;
 
     /**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getNumber()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getNumber()
+     * @generated
+     * @ordered
+     */
     protected String number = NUMBER_EDEFAULT;
 
     /**
-	 * The cached value of the '{@link #getDistrict() <em>District</em>}' reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getDistrict() <em>District</em>}' reference.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getDistrict()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getDistrict()
+     * @generated
+     * @ordered
+     */
     protected District district;
 
     /**
-	 * The cached value of the '{@link #getPlotList() <em>Plot List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getPlotList() <em>Plot List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getPlotList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getPlotList()
+     * @generated
+     * @ordered
+     */
     protected EList plotList;
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected AcreageImpl()
     {
-		super();
-	}
+        super();
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected EClass eStaticClass()
     {
-		return WorkaroundPackage.Literals.ACREAGE;
-	}
+        return WorkaroundPackage.Literals.ACREAGE;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public String getAcreageName()
     {
-		return acreageName;
-	}
+        return acreageName;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void setAcreageName(String newAcreageName)
     {
-		String oldAcreageName = acreageName;
-		acreageName = newAcreageName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.ACREAGE__ACREAGE_NAME, oldAcreageName, acreageName));
-	}
+        String oldAcreageName = acreageName;
+        acreageName = newAcreageName;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.ACREAGE__ACREAGE_NAME, oldAcreageName, acreageName));
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public String getNumber()
     {
-		return number;
-	}
+        return number;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void setNumber(String newNumber)
     {
-		String oldNumber = number;
-		number = newNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.ACREAGE__NUMBER, oldNumber, number));
-	}
+        String oldNumber = number;
+        number = newNumber;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.ACREAGE__NUMBER, oldNumber, number));
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public District getDistrict()
     {
-		if (district != null && district.eIsProxy()) {
-			InternalEObject oldDistrict = (InternalEObject)district;
-			district = (District)eResolveProxy(oldDistrict);
-			if (district != oldDistrict) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkaroundPackage.ACREAGE__DISTRICT, oldDistrict, district));
-			}
-		}
-		return district;
-	}
+        if (district != null && district.eIsProxy())
+        {
+            InternalEObject oldDistrict = (InternalEObject)district;
+            district = (District)eResolveProxy(oldDistrict);
+            if (district != oldDistrict)
+            {
+                if (eNotificationRequired())
+                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkaroundPackage.ACREAGE__DISTRICT, oldDistrict, district));
+            }
+        }
+        return district;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public District basicGetDistrict()
     {
-		return district;
-	}
+        return district;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void setDistrict(District newDistrict)
     {
-		District oldDistrict = district;
-		district = newDistrict;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.ACREAGE__DISTRICT, oldDistrict, district));
-	}
+        District oldDistrict = district;
+        district = newDistrict;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.ACREAGE__DISTRICT, oldDistrict, district));
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getPlotList()
     {
-		if (plotList == null) {
-			plotList = new EObjectContainmentEList(Plot.class, this, WorkaroundPackage.ACREAGE__PLOT_LIST);
-		}
-		return plotList;
-	}
+        if (plotList == null)
+        {
+            plotList = new EObjectContainmentEList(Plot.class, this, WorkaroundPackage.ACREAGE__PLOT_LIST);
+        }
+        return plotList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
     {
-		switch (featureID) {
-			case WorkaroundPackage.ACREAGE__PLOT_LIST:
-				return ((InternalEList)getPlotList()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.ACREAGE__PLOT_LIST:
+                return ((InternalEList)getPlotList()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public Object eGet(int featureID, boolean resolve, boolean coreType)
     {
-		switch (featureID) {
-			case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
-				return getAcreageName();
-			case WorkaroundPackage.ACREAGE__NUMBER:
-				return getNumber();
-			case WorkaroundPackage.ACREAGE__DISTRICT:
-				if (resolve) return getDistrict();
-				return basicGetDistrict();
-			case WorkaroundPackage.ACREAGE__PLOT_LIST:
-				return getPlotList();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
+                return getAcreageName();
+            case WorkaroundPackage.ACREAGE__NUMBER:
+                return getNumber();
+            case WorkaroundPackage.ACREAGE__DISTRICT:
+                if (resolve) return getDistrict();
+                return basicGetDistrict();
+            case WorkaroundPackage.ACREAGE__PLOT_LIST:
+                return getPlotList();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void eSet(int featureID, Object newValue)
     {
-		switch (featureID) {
-			case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
-				setAcreageName((String)newValue);
-				return;
-			case WorkaroundPackage.ACREAGE__NUMBER:
-				setNumber((String)newValue);
-				return;
-			case WorkaroundPackage.ACREAGE__DISTRICT:
-				setDistrict((District)newValue);
-				return;
-			case WorkaroundPackage.ACREAGE__PLOT_LIST:
-				getPlotList().clear();
-				getPlotList().addAll((Collection)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
+                setAcreageName((String)newValue);
+                return;
+            case WorkaroundPackage.ACREAGE__NUMBER:
+                setNumber((String)newValue);
+                return;
+            case WorkaroundPackage.ACREAGE__DISTRICT:
+                setDistrict((District)newValue);
+                return;
+            case WorkaroundPackage.ACREAGE__PLOT_LIST:
+                getPlotList().clear();
+                getPlotList().addAll((Collection)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void eUnset(int featureID)
     {
-		switch (featureID) {
-			case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
-				setAcreageName(ACREAGE_NAME_EDEFAULT);
-				return;
-			case WorkaroundPackage.ACREAGE__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
-				return;
-			case WorkaroundPackage.ACREAGE__DISTRICT:
-				setDistrict((District)null);
-				return;
-			case WorkaroundPackage.ACREAGE__PLOT_LIST:
-				getPlotList().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
+                setAcreageName(ACREAGE_NAME_EDEFAULT);
+                return;
+            case WorkaroundPackage.ACREAGE__NUMBER:
+                setNumber(NUMBER_EDEFAULT);
+                return;
+            case WorkaroundPackage.ACREAGE__DISTRICT:
+                setDistrict((District)null);
+                return;
+            case WorkaroundPackage.ACREAGE__PLOT_LIST:
+                getPlotList().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public boolean eIsSet(int featureID)
     {
-		switch (featureID) {
-			case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
-				return ACREAGE_NAME_EDEFAULT == null ? acreageName != null : !ACREAGE_NAME_EDEFAULT.equals(acreageName);
-			case WorkaroundPackage.ACREAGE__NUMBER:
-				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
-			case WorkaroundPackage.ACREAGE__DISTRICT:
-				return district != null;
-			case WorkaroundPackage.ACREAGE__PLOT_LIST:
-				return plotList != null && !plotList.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.ACREAGE__ACREAGE_NAME:
+                return ACREAGE_NAME_EDEFAULT == null ? acreageName != null : !ACREAGE_NAME_EDEFAULT.equals(acreageName);
+            case WorkaroundPackage.ACREAGE__NUMBER:
+                return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
+            case WorkaroundPackage.ACREAGE__DISTRICT:
+                return district != null;
+            case WorkaroundPackage.ACREAGE__PLOT_LIST:
+                return plotList != null && !plotList.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public String toString()
     {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (acreageName: ");
-		result.append(acreageName);
-		result.append(", number: ");
-		result.append(number);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (acreageName: ");
+        result.append(acreageName);
+        result.append(", number: ");
+        result.append(number);
+        result.append(')');
+        return result.toString();
+    }
 
 } //AcreageImpl

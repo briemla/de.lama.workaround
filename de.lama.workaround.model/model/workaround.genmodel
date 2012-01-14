@@ -7,7 +7,7 @@
   <foreignModel>workaround.ecore</foreignModel>
   <genPackages prefix="Workaround" disposableProviderFactory="true" ecorePackage="workaround.ecore#/">
     <genClasses ecoreClass="workaround.ecore#//Workaround">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/workList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/operationList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/vehicleList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/machineList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workaround.ecore#//Workaround/acreageList"/>
@@ -36,7 +36,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/startDriveDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/endDriveDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/remark"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workaround.ecore#//Job/mechanicalWork"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workaround.ecore#//Job/preparations"/>
     </genClasses>
     <genClasses ecoreClass="workaround.ecore#//Machine">

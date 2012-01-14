@@ -87,10 +87,6 @@
         <element xmi:type="ecore:EAttribute" href="workaround.ecore#//Job/remark"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_DQfroRYWEeGRG_G6DWBMqg"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_QcNfABYWEeGRG_G6DWBMqg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="workaround.ecore#//Job/mechanicalWork"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_QcNfARYWEeGRG_G6DWBMqg"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_rDOotRVMEeGiQOEh3PAshQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_rDOothVMEeGiQOEh3PAshQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_rDOotxVMEeGiQOEh3PAshQ"/>
@@ -307,7 +303,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_OVwswRVOEeGiQOEh3PAshQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_OVwswhVOEeGiQOEh3PAshQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="workaround.ecore#//Workaround/workList"/>
+    <element xmi:type="ecore:EReference" href="workaround.ecore#//Workaround/operationList"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OVwswxVOEeGiQOEh3PAshQ" points="[1, 6, -87, -57]$[88, 6, 0, -57]$[88, 61, 0, -2]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UGKlIBVOEeGiQOEh3PAshQ" id="(0.9862068965517241,0.8849557522123894)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_OVwsyBVOEeGiQOEh3PAshQ" id="(0.45098039215686275,0.06976744186046512)"/>

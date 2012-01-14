@@ -44,195 +44,197 @@ public class PlotItemProvider
         IItemPropertySource
 {
     /**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
+     * This constructs an instance from a factory and a notifier.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public PlotItemProvider(AdapterFactory adapterFactory)
     {
-		super(adapterFactory);
-	}
+        super(adapterFactory);
+    }
 
     /**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
+     * This returns the property descriptors for the adapted class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public List getPropertyDescriptors(Object object)
     {
-		if (itemPropertyDescriptors == null) {
-			super.getPropertyDescriptors(object);
+        if (itemPropertyDescriptors == null)
+        {
+            super.getPropertyDescriptors(object);
 
-			addPlotNumberPropertyDescriptor(object);
-			addUnderNumberPropertyDescriptor(object);
-			addCadastralAreaPropertyDescriptor(object);
-			addNettoAreaPropertyDescriptor(object);
-		}
-		return itemPropertyDescriptors;
-	}
+            addPlotNumberPropertyDescriptor(object);
+            addUnderNumberPropertyDescriptor(object);
+            addCadastralAreaPropertyDescriptor(object);
+            addNettoAreaPropertyDescriptor(object);
+        }
+        return itemPropertyDescriptors;
+    }
 
     /**
-	 * This adds a property descriptor for the Plot Number feature.
-	 * <!-- begin-user-doc -->
+     * This adds a property descriptor for the Plot Number feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected void addPlotNumberPropertyDescriptor(Object object)
     {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Plot_plotNumber_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Plot_plotNumber_feature", "_UI_Plot_type"),
-				 WorkaroundPackage.Literals.PLOT__PLOT_NUMBER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_Plot_plotNumber_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Plot_plotNumber_feature", "_UI_Plot_type"),
+                 WorkaroundPackage.Literals.PLOT__PLOT_NUMBER,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
 
     /**
-	 * This adds a property descriptor for the Under Number feature.
-	 * <!-- begin-user-doc -->
+     * This adds a property descriptor for the Under Number feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected void addUnderNumberPropertyDescriptor(Object object)
     {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Plot_underNumber_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Plot_underNumber_feature", "_UI_Plot_type"),
-				 WorkaroundPackage.Literals.PLOT__UNDER_NUMBER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_Plot_underNumber_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Plot_underNumber_feature", "_UI_Plot_type"),
+                 WorkaroundPackage.Literals.PLOT__UNDER_NUMBER,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
 
     /**
-	 * This adds a property descriptor for the Cadastral Area feature.
-	 * <!-- begin-user-doc -->
+     * This adds a property descriptor for the Cadastral Area feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected void addCadastralAreaPropertyDescriptor(Object object)
     {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Plot_cadastralArea_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Plot_cadastralArea_feature", "_UI_Plot_type"),
-				 WorkaroundPackage.Literals.PLOT__CADASTRAL_AREA,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_Plot_cadastralArea_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Plot_cadastralArea_feature", "_UI_Plot_type"),
+                 WorkaroundPackage.Literals.PLOT__CADASTRAL_AREA,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
 
     /**
-	 * This adds a property descriptor for the Netto Area feature.
-	 * <!-- begin-user-doc -->
+     * This adds a property descriptor for the Netto Area feature.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected void addNettoAreaPropertyDescriptor(Object object)
     {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Plot_nettoArea_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Plot_nettoArea_feature", "_UI_Plot_type"),
-				 WorkaroundPackage.Literals.PLOT__NETTO_AREA,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_Plot_nettoArea_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Plot_nettoArea_feature", "_UI_Plot_type"),
+                 WorkaroundPackage.Literals.PLOT__NETTO_AREA,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
 
     /**
-	 * This returns Plot.gif.
-	 * <!-- begin-user-doc -->
+     * This returns Plot.gif.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public Object getImage(Object object)
     {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Plot"));
-	}
+        return overlayImage(object, getResourceLocator().getImage("full/obj16/Plot"));
+    }
 
     /**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
+     * This returns the label text for the adapted class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public String getText(Object object)
     {
-		String label = ((Plot)object).getPlotNumber();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Plot_type") :
-			getString("_UI_Plot_type") + " " + label;
-	}
+        String label = ((Plot)object).getPlotNumber();
+        return label == null || label.length() == 0 ?
+            getString("_UI_Plot_type") :
+            getString("_UI_Plot_type") + " " + label;
+    }
 
     /**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
+     * This handles model notifications by calling {@link #updateChildren} to update any cached
+     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void notifyChanged(Notification notification)
     {
-		updateChildren(notification);
+        updateChildren(notification);
 
-		switch (notification.getFeatureID(Plot.class)) {
-			case WorkaroundPackage.PLOT__PLOT_NUMBER:
-			case WorkaroundPackage.PLOT__UNDER_NUMBER:
-			case WorkaroundPackage.PLOT__CADASTRAL_AREA:
-			case WorkaroundPackage.PLOT__NETTO_AREA:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
-		super.notifyChanged(notification);
-	}
+        switch (notification.getFeatureID(Plot.class))
+        {
+            case WorkaroundPackage.PLOT__PLOT_NUMBER:
+            case WorkaroundPackage.PLOT__UNDER_NUMBER:
+            case WorkaroundPackage.PLOT__CADASTRAL_AREA:
+            case WorkaroundPackage.PLOT__NETTO_AREA:
+                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+                return;
+        }
+        super.notifyChanged(notification);
+    }
 
     /**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+     * that can be created under this object.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected void collectNewChildDescriptors(Collection newChildDescriptors, Object object)
     {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
+        super.collectNewChildDescriptors(newChildDescriptors, object);
+    }
 
     /**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public ResourceLocator getResourceLocator()
     {
-		return WorkaroundEditPlugin.INSTANCE;
-	}
+        return WorkaroundEditPlugin.INSTANCE;
+    }
 
 }

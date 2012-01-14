@@ -39,7 +39,7 @@ import workaround.WorkaroundPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link workaround.impl.WorkaroundImpl#getWorkList <em>Work List</em>}</li>
+ *   <li>{@link workaround.impl.WorkaroundImpl#getOperationList <em>Operation List</em>}</li>
  *   <li>{@link workaround.impl.WorkaroundImpl#getVehicleList <em>Vehicle List</em>}</li>
  *   <li>{@link workaround.impl.WorkaroundImpl#getMachineList <em>Machine List</em>}</li>
  *   <li>{@link workaround.impl.WorkaroundImpl#getAcreageList <em>Acreage List</em>}</li>
@@ -56,407 +56,421 @@ import workaround.WorkaroundPackage;
 public class WorkaroundImpl extends EObjectImpl implements Workaround
 {
     /**
-	 * The cached value of the '{@link #getWorkList() <em>Work List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getOperationList() <em>Operation List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getWorkList()
-	 * @generated
-	 * @ordered
-	 */
-    protected EList workList;
+     * @see #getOperationList()
+     * @generated
+     * @ordered
+     */
+    protected EList operationList;
 
     /**
-	 * The cached value of the '{@link #getVehicleList() <em>Vehicle List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getVehicleList() <em>Vehicle List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getVehicleList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getVehicleList()
+     * @generated
+     * @ordered
+     */
     protected EList vehicleList;
 
     /**
-	 * The cached value of the '{@link #getMachineList() <em>Machine List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getMachineList() <em>Machine List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getMachineList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getMachineList()
+     * @generated
+     * @ordered
+     */
     protected EList machineList;
 
     /**
-	 * The cached value of the '{@link #getAcreageList() <em>Acreage List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getAcreageList() <em>Acreage List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getAcreageList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAcreageList()
+     * @generated
+     * @ordered
+     */
     protected EList acreageList;
 
     /**
-	 * The cached value of the '{@link #getPersonList() <em>Person List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getPersonList() <em>Person List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getPersonList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getPersonList()
+     * @generated
+     * @ordered
+     */
     protected EList personList;
 
     /**
-	 * The cached value of the '{@link #getJobList() <em>Job List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getJobList() <em>Job List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getJobList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getJobList()
+     * @generated
+     * @ordered
+     */
     protected EList jobList;
 
     /**
-	 * The cached value of the '{@link #getDistrictList() <em>District List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getDistrictList() <em>District List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getDistrictList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getDistrictList()
+     * @generated
+     * @ordered
+     */
     protected EList districtList;
 
     /**
-	 * The cached value of the '{@link #getPreparationList() <em>Preparation List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getPreparationList() <em>Preparation List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getPreparationList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getPreparationList()
+     * @generated
+     * @ordered
+     */
     protected EList preparationList;
 
     /**
-	 * The cached value of the '{@link #getPostAreaList() <em>Post Area List</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getPostAreaList() <em>Post Area List</em>}' containment reference list.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @see #getPostAreaList()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getPostAreaList()
+     * @generated
+     * @ordered
+     */
     protected EList postAreaList;
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected WorkaroundImpl()
     {
-		super();
-	}
+        super();
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     protected EClass eStaticClass()
     {
-		return WorkaroundPackage.Literals.WORKAROUND;
-	}
+        return WorkaroundPackage.Literals.WORKAROUND;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
-    public EList getWorkList()
+     * @generated
+     */
+    public EList getOperationList()
     {
-		if (workList == null) {
-			workList = new EObjectContainmentEList(Operation.class, this, WorkaroundPackage.WORKAROUND__WORK_LIST);
-		}
-		return workList;
-	}
+        if (operationList == null)
+        {
+            operationList = new EObjectContainmentEList(Operation.class, this, WorkaroundPackage.WORKAROUND__OPERATION_LIST);
+        }
+        return operationList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getVehicleList()
     {
-		if (vehicleList == null) {
-			vehicleList = new EObjectContainmentEList(Vehicle.class, this, WorkaroundPackage.WORKAROUND__VEHICLE_LIST);
-		}
-		return vehicleList;
-	}
+        if (vehicleList == null)
+        {
+            vehicleList = new EObjectContainmentEList(Vehicle.class, this, WorkaroundPackage.WORKAROUND__VEHICLE_LIST);
+        }
+        return vehicleList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getMachineList()
     {
-		if (machineList == null) {
-			machineList = new EObjectContainmentEList(Machine.class, this, WorkaroundPackage.WORKAROUND__MACHINE_LIST);
-		}
-		return machineList;
-	}
+        if (machineList == null)
+        {
+            machineList = new EObjectContainmentEList(Machine.class, this, WorkaroundPackage.WORKAROUND__MACHINE_LIST);
+        }
+        return machineList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getAcreageList()
     {
-		if (acreageList == null) {
-			acreageList = new EObjectContainmentEList(Acreage.class, this, WorkaroundPackage.WORKAROUND__ACREAGE_LIST);
-		}
-		return acreageList;
-	}
+        if (acreageList == null)
+        {
+            acreageList = new EObjectContainmentEList(Acreage.class, this, WorkaroundPackage.WORKAROUND__ACREAGE_LIST);
+        }
+        return acreageList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getPersonList()
     {
-		if (personList == null) {
-			personList = new EObjectContainmentEList(Person.class, this, WorkaroundPackage.WORKAROUND__PERSON_LIST);
-		}
-		return personList;
-	}
+        if (personList == null)
+        {
+            personList = new EObjectContainmentEList(Person.class, this, WorkaroundPackage.WORKAROUND__PERSON_LIST);
+        }
+        return personList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getJobList()
     {
-		if (jobList == null) {
-			jobList = new EObjectContainmentEList(Job.class, this, WorkaroundPackage.WORKAROUND__JOB_LIST);
-		}
-		return jobList;
-	}
+        if (jobList == null)
+        {
+            jobList = new EObjectContainmentEList(Job.class, this, WorkaroundPackage.WORKAROUND__JOB_LIST);
+        }
+        return jobList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getDistrictList()
     {
-		if (districtList == null) {
-			districtList = new EObjectContainmentEList(District.class, this, WorkaroundPackage.WORKAROUND__DISTRICT_LIST);
-		}
-		return districtList;
-	}
+        if (districtList == null)
+        {
+            districtList = new EObjectContainmentEList(District.class, this, WorkaroundPackage.WORKAROUND__DISTRICT_LIST);
+        }
+        return districtList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getPreparationList()
     {
-		if (preparationList == null) {
-			preparationList = new EObjectContainmentEList(Preparation.class, this, WorkaroundPackage.WORKAROUND__PREPARATION_LIST);
-		}
-		return preparationList;
-	}
+        if (preparationList == null)
+        {
+            preparationList = new EObjectContainmentEList(Preparation.class, this, WorkaroundPackage.WORKAROUND__PREPARATION_LIST);
+        }
+        return preparationList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public EList getPostAreaList()
     {
-		if (postAreaList == null) {
-			postAreaList = new EObjectContainmentEList(PostArea.class, this, WorkaroundPackage.WORKAROUND__POST_AREA_LIST);
-		}
-		return postAreaList;
-	}
+        if (postAreaList == null)
+        {
+            postAreaList = new EObjectContainmentEList(PostArea.class, this, WorkaroundPackage.WORKAROUND__POST_AREA_LIST);
+        }
+        return postAreaList;
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
     {
-		switch (featureID) {
-			case WorkaroundPackage.WORKAROUND__WORK_LIST:
-				return ((InternalEList)getWorkList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
-				return ((InternalEList)getVehicleList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
-				return ((InternalEList)getMachineList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
-				return ((InternalEList)getAcreageList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__PERSON_LIST:
-				return ((InternalEList)getPersonList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__JOB_LIST:
-				return ((InternalEList)getJobList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
-				return ((InternalEList)getDistrictList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
-				return ((InternalEList)getPreparationList()).basicRemove(otherEnd, msgs);
-			case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
-				return ((InternalEList)getPostAreaList()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.WORKAROUND__OPERATION_LIST:
+                return ((InternalEList)getOperationList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
+                return ((InternalEList)getVehicleList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
+                return ((InternalEList)getMachineList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
+                return ((InternalEList)getAcreageList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__PERSON_LIST:
+                return ((InternalEList)getPersonList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__JOB_LIST:
+                return ((InternalEList)getJobList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
+                return ((InternalEList)getDistrictList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
+                return ((InternalEList)getPreparationList()).basicRemove(otherEnd, msgs);
+            case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
+                return ((InternalEList)getPostAreaList()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public Object eGet(int featureID, boolean resolve, boolean coreType)
     {
-		switch (featureID) {
-			case WorkaroundPackage.WORKAROUND__WORK_LIST:
-				return getWorkList();
-			case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
-				return getVehicleList();
-			case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
-				return getMachineList();
-			case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
-				return getAcreageList();
-			case WorkaroundPackage.WORKAROUND__PERSON_LIST:
-				return getPersonList();
-			case WorkaroundPackage.WORKAROUND__JOB_LIST:
-				return getJobList();
-			case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
-				return getDistrictList();
-			case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
-				return getPreparationList();
-			case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
-				return getPostAreaList();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.WORKAROUND__OPERATION_LIST:
+                return getOperationList();
+            case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
+                return getVehicleList();
+            case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
+                return getMachineList();
+            case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
+                return getAcreageList();
+            case WorkaroundPackage.WORKAROUND__PERSON_LIST:
+                return getPersonList();
+            case WorkaroundPackage.WORKAROUND__JOB_LIST:
+                return getJobList();
+            case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
+                return getDistrictList();
+            case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
+                return getPreparationList();
+            case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
+                return getPostAreaList();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void eSet(int featureID, Object newValue)
     {
-		switch (featureID) {
-			case WorkaroundPackage.WORKAROUND__WORK_LIST:
-				getWorkList().clear();
-				getWorkList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
-				getVehicleList().clear();
-				getVehicleList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
-				getMachineList().clear();
-				getMachineList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
-				getAcreageList().clear();
-				getAcreageList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__PERSON_LIST:
-				getPersonList().clear();
-				getPersonList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__JOB_LIST:
-				getJobList().clear();
-				getJobList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
-				getDistrictList().clear();
-				getDistrictList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
-				getPreparationList().clear();
-				getPreparationList().addAll((Collection)newValue);
-				return;
-			case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
-				getPostAreaList().clear();
-				getPostAreaList().addAll((Collection)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.WORKAROUND__OPERATION_LIST:
+                getOperationList().clear();
+                getOperationList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
+                getVehicleList().clear();
+                getVehicleList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
+                getMachineList().clear();
+                getMachineList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
+                getAcreageList().clear();
+                getAcreageList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__PERSON_LIST:
+                getPersonList().clear();
+                getPersonList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__JOB_LIST:
+                getJobList().clear();
+                getJobList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
+                getDistrictList().clear();
+                getDistrictList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
+                getPreparationList().clear();
+                getPreparationList().addAll((Collection)newValue);
+                return;
+            case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
+                getPostAreaList().clear();
+                getPostAreaList().addAll((Collection)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public void eUnset(int featureID)
     {
-		switch (featureID) {
-			case WorkaroundPackage.WORKAROUND__WORK_LIST:
-				getWorkList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
-				getVehicleList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
-				getMachineList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
-				getAcreageList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__PERSON_LIST:
-				getPersonList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__JOB_LIST:
-				getJobList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
-				getDistrictList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
-				getPreparationList().clear();
-				return;
-			case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
-				getPostAreaList().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.WORKAROUND__OPERATION_LIST:
+                getOperationList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
+                getVehicleList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
+                getMachineList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
+                getAcreageList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__PERSON_LIST:
+                getPersonList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__JOB_LIST:
+                getJobList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
+                getDistrictList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
+                getPreparationList().clear();
+                return;
+            case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
+                getPostAreaList().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
     /**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
     public boolean eIsSet(int featureID)
     {
-		switch (featureID) {
-			case WorkaroundPackage.WORKAROUND__WORK_LIST:
-				return workList != null && !workList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
-				return vehicleList != null && !vehicleList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
-				return machineList != null && !machineList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
-				return acreageList != null && !acreageList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__PERSON_LIST:
-				return personList != null && !personList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__JOB_LIST:
-				return jobList != null && !jobList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
-				return districtList != null && !districtList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
-				return preparationList != null && !preparationList.isEmpty();
-			case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
-				return postAreaList != null && !postAreaList.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID)
+        {
+            case WorkaroundPackage.WORKAROUND__OPERATION_LIST:
+                return operationList != null && !operationList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__VEHICLE_LIST:
+                return vehicleList != null && !vehicleList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__MACHINE_LIST:
+                return machineList != null && !machineList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__ACREAGE_LIST:
+                return acreageList != null && !acreageList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__PERSON_LIST:
+                return personList != null && !personList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__JOB_LIST:
+                return jobList != null && !jobList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__DISTRICT_LIST:
+                return districtList != null && !districtList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__PREPARATION_LIST:
+                return preparationList != null && !preparationList.isEmpty();
+            case WorkaroundPackage.WORKAROUND__POST_AREA_LIST:
+                return postAreaList != null && !postAreaList.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //WorkaroundImpl
