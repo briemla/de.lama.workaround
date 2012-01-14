@@ -10,7 +10,7 @@ import org.eclipse.emf.edit.command.AddCommand;
 import workaround.Workaround;
 import workaround.presentation.WorkaroundEditingDomain;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.Extract;
-import de.lama.workaround.transfer.handler.load.mdb.move.extractor.IExtractStrategie;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.IExtractStrategie;
 import de.lama.workaround.transfer.utilities.EditorUtilities;
 
 public class Move<T>
@@ -31,13 +31,12 @@ public class Move<T>
         return this;
     }
 
-    @SuppressWarnings("unchecked")
     public void into(WorkaroundEditingDomain editingDomain) throws SQLException
     {
         this.editingDomain = editingDomain;
         Workaround owner = editingDomain.getWorkaround();
-        List<T> persons = read(owner);
-        insertInto(owner, persons);
+        List<T> elements = read(owner);
+        insertInto(owner, elements);
     }
 
     public List<T> read(Workaround owner) throws SQLException

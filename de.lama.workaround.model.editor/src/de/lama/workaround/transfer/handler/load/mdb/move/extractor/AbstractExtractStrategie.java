@@ -2,21 +2,26 @@ package de.lama.workaround.transfer.handler.load.mdb.move.extractor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import workaround.Workaround;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.IExtractStrategie;
 
 public abstract class AbstractExtractStrategie<T> implements IExtractStrategie<T>
 {
 
     private Workaround owner;
+    private List<T> newElements;
 
     @Override
     public IExtractStrategie<T> extract(Workaround owner)
     {
+        newElements = new ArrayList<T>();
         this.owner = owner;
         return this;
     }
@@ -41,9 +46,32 @@ public abstract class AbstractExtractStrategie<T> implements IExtractStrategie<T
         return false;
     }
 
-    protected boolean installedElementsContains(T newElement)
+    public Workaround getOwner()
     {
-        for (T element : installedElements())
+        return owner;
+    }
+
+    public List<T> newElements()
+    {
+        return newElements;
+    }
+
+    public void add(T newElement)
+    {
+        if (newElementsContains(newElement))
+        {
+            return;
+        }
+        if (installedElementsContains(newElement))
+        {
+            return;
+        }
+        newElements.add(newElement);
+    }
+
+    private boolean newElementsContains(T newElement)
+    {
+        for (T element : newElements)
         {
             if (elementsAreEqual(element, newElement))
             {
@@ -53,8 +81,15 @@ public abstract class AbstractExtractStrategie<T> implements IExtractStrategie<T
         return false;
     }
 
-    public Workaround getOwner()
+    private boolean installedElementsContains(T newElement)
     {
-        return owner;
+        for (T element : installedElements())
+        {
+            if (elementsAreEqual(element, newElement))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

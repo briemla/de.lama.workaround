@@ -24,17 +24,17 @@ public abstract class DBKonstanten
     /** Tabellenname: tblEinsaatSaatgut */
     public static final String tblEinsaatSaatgut = "tblEinsaatSaatgut";
     /** Tabellenname: tblFahrzeug */
-    public static final String tblFahrzeug = "tblFahrzeug";
+    public static final String TBL_FAHRZEUG = "tblFahrzeug";
     /** Tabellenname: tblFläche */
-    public static final String tblFlaeche = "tblFläche";
+    public static final String TBL_FLAECHE = "tblFläche";
     /** Tabellenname: tblFlurgrundstück */
     public static final String tblFlurgrundstueck = "tblFlurgrundstück";
     /** Tabellenname: tblGerät */
-    public static final String tblGeraet = "tblGerät";
+    public static final String TBL_GERAET = "tblGerät";
     /** Tabellenname: tblPerson */
     public static final String TBL_PERSON = "tblPerson";
     /** Tabellenname: tblPräparat */
-    public static final String tblPraeparat = "tblPräparat";
+    public static final String TBL_PRAEPARAT = "tblPräparat";
     /** Tabellenname: tblSaatgut */
     public static final String tblSaatgut = "tblSaatgut";
     /** Tabellenname: tblSämaschineneEinstellung */
@@ -86,19 +86,19 @@ public abstract class DBKonstanten
     /** FZID Fahrzeug ID */
     public static final String fzid = "FZID";
     /** Bezeichnung */
-    public static final String bezeichnung = "Bezeichnung";
+    public static final String COLUMN_BEZEICHNUNG = "Bezeichnung";
     /** Kennzeichen */
-    public static final String kennzeichen = "Kennzeichen";
+    public static final String COLUMN_KENNZEICHEN = "Kennzeichen";
 
     // tblFläche
     /** FLID Fläche/Flurgrundstücks ID */
     public static final String flid = "FLID";
     /** Flächenname */
-    public static final String name = "Name";
+    public static final String COLUMN_NAME = "Name";
     /** Gemarkung */
-    public static final String gemarkung = "Gemarkung";
+    public static final String COLUMN_GEMARKUNG = "Gemarkung";
     /** Schlagnummer */
-    public static final String schlagnummer = "Schlagnummer";
+    public static final String COLUMN_SCHLAGNUMMER = "Schlagnummer";
 
     // tblFlurgrundstück
     /** Flurstücksnummer */
@@ -118,9 +118,9 @@ public abstract class DBKonstanten
     /** PID Personen ID */
     public static final String pid = "PID";
     /** Nachname */
-    public static final String nachname = "Nachname";
+    public static final String COLUMN_NACHNAME = "Nachname";
     /** Vorname */
-    public static final String vorname = "Vorname";
+    public static final String COLUMN_VORNAME = "Vorname";
     /** PLZ */
     public static final String plz = "PLZ";
     /** Geburtstag */
@@ -140,7 +140,7 @@ public abstract class DBKonstanten
     /** PRID Präparat ID */
     public static final String prid = "PRID";
     /** Abkürzung */
-    public static final String abkuerzung = "Abkürzung";
+    public static final String COLUMN_ABKUERZUNG = "Abkürzung";
 
     // tblSaatgut
     /** SID Saatgut ID */

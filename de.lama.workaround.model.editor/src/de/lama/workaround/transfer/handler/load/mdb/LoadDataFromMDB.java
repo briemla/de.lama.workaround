@@ -40,6 +40,11 @@ public class LoadDataFromMDB extends AbstractHandler
         {
             MoveAll.personsFrom(mdb).into(editingDomain);
             MoveAll.operationsFrom(mdb).into(editingDomain);
+            MoveAll.vehiclesFrom(mdb).into(editingDomain);
+            MoveAll.machinesFrom(mdb).into(editingDomain);
+            MoveAll.districtsFrom(mdb).into(editingDomain);
+            MoveAll.acreagesFrom(mdb).into(editingDomain);
+            MoveAll.preparationsFrom(mdb).into(editingDomain);
         }
         catch (SQLException e)
         {

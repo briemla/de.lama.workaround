@@ -1,8 +1,7 @@
-package de.lama.workaround.transfer.handler.load.mdb.move.extractor;
+package de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,28 +10,24 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import workaround.Operation;
 import workaround.WorkaroundFactory;
 import workaround.WorkaroundPackage;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.AbstractExtractStrategie;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.DBKonstanten;
 
 public class OperationExtractStrategie extends AbstractExtractStrategie<Operation>
 {
 
     public List<Operation> from(ResultSet tableResult) throws SQLException
-
     {
-        List<Operation> operations = new ArrayList<Operation>();
         while (tableResult.next())
         {
-            Operation nextOperation = WorkaroundFactory.eINSTANCE.createOperation();
+            Operation newOperation = WorkaroundFactory.eINSTANCE.createOperation();
             String tableColumn = DBKonstanten.taetigkeit;
             String taetigkeit = extractStringFrom(tableResult, tableColumn);
-            nextOperation.setTask(taetigkeit);
+            newOperation.setTask(taetigkeit);
 
-            if (installedElementsContains(nextOperation))
-            {
-                continue;
-            }
-            operations.add(nextOperation);
+            add(newOperation);
         }
-        return operations;
+        return newElements();
     }
 
     @Override
@@ -47,6 +42,7 @@ public class OperationExtractStrategie extends AbstractExtractStrategie<Operatio
         return DBKonstanten.TBL_ARBEITSVORGANG;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     protected EList<Operation> installedElements()
     {

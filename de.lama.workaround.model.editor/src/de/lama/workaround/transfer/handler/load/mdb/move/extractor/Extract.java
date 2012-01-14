@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.IExtractStrategie;
+
 import workaround.Workaround;
 
 public class Extract<T>

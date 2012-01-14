@@ -1,8 +1,7 @@
-package de.lama.workaround.transfer.handler.load.mdb.move.extractor;
+package de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,30 +10,28 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import workaround.Person;
 import workaround.WorkaroundFactory;
 import workaround.WorkaroundPackage;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.AbstractExtractStrategie;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.DBKonstanten;
 
 public class PersonExtractStrategie extends AbstractExtractStrategie<Person>
 {
 
+    @Override
     public List<Person> from(ResultSet tableResult) throws SQLException
     {
-        List<Person> persons = new ArrayList<Person>();
         while (tableResult.next())
         {
-            Person nextPerson = WorkaroundFactory.eINSTANCE.createPerson();
-            String tableColumn = DBKonstanten.nachname;
+            Person newPerson = WorkaroundFactory.eINSTANCE.createPerson();
+            String tableColumn = DBKonstanten.COLUMN_NACHNAME;
             String nachname = extractStringFrom(tableResult, tableColumn);
-            nextPerson.setLastName(nachname);
-            tableColumn = DBKonstanten.vorname;
+            newPerson.setLastName(nachname);
+            tableColumn = DBKonstanten.COLUMN_VORNAME;
             String vorname = extractStringFrom(tableResult, tableColumn);
-            nextPerson.setFirstName(vorname);
+            newPerson.setFirstName(vorname);
 
-            if (installedElementsContains(nextPerson))
-            {
-                continue;
-            }
-            persons.add(nextPerson);
+            add(newPerson);
         }
-        return persons;
+        return newElements();
     }
 
     @Override
@@ -49,6 +46,7 @@ public class PersonExtractStrategie extends AbstractExtractStrategie<Person>
         return DBKonstanten.TBL_PERSON;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     protected EList<Person> installedElements()
     {

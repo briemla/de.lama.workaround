@@ -1,4 +1,4 @@
-package de.lama.workaround.transfer.handler.load.mdb.move.extractor;
+package de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
