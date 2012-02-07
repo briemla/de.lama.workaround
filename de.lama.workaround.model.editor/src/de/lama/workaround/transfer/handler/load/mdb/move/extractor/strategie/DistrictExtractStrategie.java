@@ -25,7 +25,13 @@ public class DistrictExtractStrategie extends AbstractExtractStrategie<District>
             String tableColumn = DBKonstanten.COLUMN_GEMARKUNG;
             String gemarkung = extractStringFrom(tableResult, tableColumn);
             newDistrict.setDistrictName(gemarkung);
-
+            if (newDistrict.getDistrictName() == null)
+            {
+                String flidColumn = DBKonstanten.COLUMN_FLID;
+                Integer flid = (Integer) extractObjectFrom(tableResult, flidColumn);
+                System.out.println("District missing: " + flid);
+                continue;
+            }
             add(newDistrict);
         }
         return newElements();

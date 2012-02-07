@@ -21,10 +21,16 @@ public class OperationExtractStrategie extends AbstractExtractStrategie<Operatio
         while (tableResult.next())
         {
             Operation newOperation = WorkaroundFactory.eINSTANCE.createOperation();
-            String tableColumn = DBKonstanten.taetigkeit;
+            String tableColumn = DBKonstanten.COLUMN_TAETIGKEIT;
             String taetigkeit = extractStringFrom(tableResult, tableColumn);
             newOperation.setTask(taetigkeit);
-
+            if (newOperation.getTask() == null)
+            {
+                String arbvidColumn = DBKonstanten.COLUMN_ARBVID;
+                Integer arbvidid = (Integer) extractObjectFrom(tableResult, arbvidColumn);
+                System.out.println("Operation missing: " + arbvidid);
+                continue;
+            }
             add(newOperation);
         }
         return newElements();

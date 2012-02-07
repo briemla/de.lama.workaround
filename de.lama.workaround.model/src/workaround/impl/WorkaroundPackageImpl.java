@@ -350,7 +350,7 @@ public class WorkaroundPackageImpl extends EPackageImpl implements WorkaroundPac
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getJob_Operations()
+    public EReference getJob_Operation()
     {
         return (EReference)jobEClass.getEStructuralFeatures().get(0);
     }
@@ -815,7 +815,7 @@ public class WorkaroundPackageImpl extends EPackageImpl implements WorkaroundPac
         createEAttribute(vehicleEClass, VEHICLE__AUTOMOTIVE);
 
         jobEClass = createEClass(JOB);
-        createEReference(jobEClass, JOB__OPERATIONS);
+        createEReference(jobEClass, JOB__OPERATION);
         createEReference(jobEClass, JOB__VEHICLES);
         createEReference(jobEClass, JOB__MACHINES);
         createEReference(jobEClass, JOB__ACREAGE);
@@ -913,7 +913,7 @@ public class WorkaroundPackageImpl extends EPackageImpl implements WorkaroundPac
         initEAttribute(getVehicle_Automotive(), ecorePackage.getEBooleanObject(), "automotive", null, 0, 1, Vehicle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getJob_Operations(), this.getOperation(), null, "operations", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getJob_Operation(), this.getOperation(), null, "operation", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getJob_Vehicles(), this.getVehicle(), null, "vehicles", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getJob_Machines(), this.getMachine(), null, "machines", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getJob_Acreage(), this.getAcreage(), null, "acreage", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

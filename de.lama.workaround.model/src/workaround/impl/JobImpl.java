@@ -37,7 +37,7 @@ import workaround.WorkaroundPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link workaround.impl.JobImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link workaround.impl.JobImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link workaround.impl.JobImpl#getVehicles <em>Vehicles</em>}</li>
  *   <li>{@link workaround.impl.JobImpl#getMachines <em>Machines</em>}</li>
  *   <li>{@link workaround.impl.JobImpl#getAcreage <em>Acreage</em>}</li>
@@ -56,14 +56,14 @@ import workaround.WorkaroundPackage;
 public class JobImpl extends EObjectImpl implements Job
 {
     /**
-     * The cached value of the '{@link #getOperations() <em>Operations</em>}' reference.
+     * The cached value of the '{@link #getOperation() <em>Operation</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOperations()
+     * @see #getOperation()
      * @generated
      * @ordered
      */
-    protected Operation operations;
+    protected Operation operation;
 
     /**
      * The cached value of the '{@link #getVehicles() <em>Vehicles</em>}' reference list.
@@ -240,19 +240,19 @@ public class JobImpl extends EObjectImpl implements Job
      * <!-- end-user-doc -->
      * @generated
      */
-    public Operation getOperations()
+    public Operation getOperation()
     {
-        if (operations != null && operations.eIsProxy())
+        if (operation != null && operation.eIsProxy())
         {
-            InternalEObject oldOperations = (InternalEObject)operations;
-            operations = (Operation)eResolveProxy(oldOperations);
-            if (operations != oldOperations)
+            InternalEObject oldOperation = (InternalEObject)operation;
+            operation = (Operation)eResolveProxy(oldOperation);
+            if (operation != oldOperation)
             {
                 if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkaroundPackage.JOB__OPERATIONS, oldOperations, operations));
+                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkaroundPackage.JOB__OPERATION, oldOperation, operation));
             }
         }
-        return operations;
+        return operation;
     }
 
     /**
@@ -260,9 +260,9 @@ public class JobImpl extends EObjectImpl implements Job
      * <!-- end-user-doc -->
      * @generated
      */
-    public Operation basicGetOperations()
+    public Operation basicGetOperation()
     {
-        return operations;
+        return operation;
     }
 
     /**
@@ -270,12 +270,12 @@ public class JobImpl extends EObjectImpl implements Job
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setOperations(Operation newOperations)
+    public void setOperation(Operation newOperation)
     {
-        Operation oldOperations = operations;
-        operations = newOperations;
+        Operation oldOperation = operation;
+        operation = newOperation;
         if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.JOB__OPERATIONS, oldOperations, operations));
+            eNotify(new ENotificationImpl(this, Notification.SET, WorkaroundPackage.JOB__OPERATION, oldOperation, operation));
     }
 
     /**
@@ -501,9 +501,9 @@ public class JobImpl extends EObjectImpl implements Job
     {
         switch (featureID)
         {
-            case WorkaroundPackage.JOB__OPERATIONS:
-                if (resolve) return getOperations();
-                return basicGetOperations();
+            case WorkaroundPackage.JOB__OPERATION:
+                if (resolve) return getOperation();
+                return basicGetOperation();
             case WorkaroundPackage.JOB__VEHICLES:
                 return getVehicles();
             case WorkaroundPackage.JOB__MACHINES:
@@ -538,8 +538,8 @@ public class JobImpl extends EObjectImpl implements Job
     {
         switch (featureID)
         {
-            case WorkaroundPackage.JOB__OPERATIONS:
-                setOperations((Operation)newValue);
+            case WorkaroundPackage.JOB__OPERATION:
+                setOperation((Operation)newValue);
                 return;
             case WorkaroundPackage.JOB__VEHICLES:
                 getVehicles().clear();
@@ -588,8 +588,8 @@ public class JobImpl extends EObjectImpl implements Job
     {
         switch (featureID)
         {
-            case WorkaroundPackage.JOB__OPERATIONS:
-                setOperations((Operation)null);
+            case WorkaroundPackage.JOB__OPERATION:
+                setOperation((Operation)null);
                 return;
             case WorkaroundPackage.JOB__VEHICLES:
                 getVehicles().clear();
@@ -634,8 +634,8 @@ public class JobImpl extends EObjectImpl implements Job
     {
         switch (featureID)
         {
-            case WorkaroundPackage.JOB__OPERATIONS:
-                return operations != null;
+            case WorkaroundPackage.JOB__OPERATION:
+                return operation != null;
             case WorkaroundPackage.JOB__VEHICLES:
                 return vehicles != null && !vehicles.isEmpty();
             case WorkaroundPackage.JOB__MACHINES:

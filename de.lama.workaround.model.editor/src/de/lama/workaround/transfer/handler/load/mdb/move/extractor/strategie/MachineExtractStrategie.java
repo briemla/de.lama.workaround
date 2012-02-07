@@ -25,6 +25,13 @@ public class MachineExtractStrategie extends AbstractExtractStrategie<Machine>
             String tableColumn = DBKonstanten.COLUMN_BEZEICHNUNG;
             String bezeichnung = extractStringFrom(tableResult, tableColumn);
             newMachine.setDescription(bezeichnung);
+            if (newMachine.getDescription() == null)
+            {
+                String gidColumn = DBKonstanten.COLUMN_GID;
+                Integer gid = (Integer) extractObjectFrom(tableResult, gidColumn);
+                System.out.println("Machine missing: " + gid);
+                continue;
+            }
             add(newMachine);
         }
         return newElements();

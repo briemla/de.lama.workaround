@@ -38,9 +38,44 @@
             categoryId="org.eclipse.ui.category.file"
             id="workaround.presentation.WorkaroundEditorAdvisorOpenCommand"/>
       <command
-            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadDataFromMDB"
-            id="de.lama.workaround.transfer.handler.loadDataFromMDBCommand"
-            name="Load data from MDB file">
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadAcreage"
+            id="de.lama.workaround.transfer.handler.loadAcreageCommand"
+            name="Load acreage data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadDistrict"
+            id="de.lama.workaround.transfer.handler.loadDistrictCommand"
+            name="Load district data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadJob"
+            id="de.lama.workaround.transfer.handler.loadJobCommand"
+            name="Load job data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadMachine"
+            id="de.lama.workaround.transfer.handler.loadMachineCommand"
+            name="Load machine data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadOperation"
+            id="de.lama.workaround.transfer.handler.loadOperationCommand"
+            name="Load operation data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadPerson"
+            id="de.lama.workaround.transfer.handler.loadPersonCommand"
+            name="Load person data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadPreparation"
+            id="de.lama.workaround.transfer.handler.loadPreparationCommand"
+            name="Load preparation data from MDB file">
+      </command>
+      <command
+            defaultHandler="de.lama.workaround.transfer.handler.load.mdb.LoadVehicle"
+            id="de.lama.workaround.transfer.handler.loadVehicleCommand"
+            name="Load vehicle data from MDB file">
       </command>
    </extension>
 
@@ -111,9 +146,51 @@
          <toolbar
                id="de.lama.workaround.transfer.toolbarAccessDB">
             <command
-                  commandId="de.lama.workaround.transfer.handler.loadDataFromMDBCommand"
+                  commandId="de.lama.workaround.transfer.handler.loadDistrictCommand"
                   icon="icons/alt_window_16.gif"
-                  label="Load data from mdb file"
+                  label="Load district data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadAcreageCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load acreage data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadMachineCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load machine data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadOperationCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load operation data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadPersonCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load person data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadPreparationCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load preparation data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadVehicleCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load vehicle data from mdb file"
+                  style="push">
+            </command>
+            <command
+                  commandId="de.lama.workaround.transfer.handler.loadJobCommand"
+                  icon="icons/alt_window_16.gif"
+                  label="Load job data from mdb file"
                   style="push">
             </command>
          </toolbar>

@@ -400,7 +400,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_Ljdu0RVPEeGiQOEh3PAshQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_Ljdu0hVPEeGiQOEh3PAshQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="workaround.ecore#//Job/operations"/>
+    <element xmi:type="ecore:EReference" href="workaround.ecore#//Job/operation"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Ljdu0xVPEeGiQOEh3PAshQ" points="[3, 0, -64, 63]$[76, 0, 9, 63]$[76, -59, 9, 4]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NiZgsBVPEeGiQOEh3PAshQ" id="(0.9836956521739131,0.1518987341772152)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ljdu2BVPEeGiQOEh3PAshQ" id="(0.5943396226415094,0.9215686274509803)"/>

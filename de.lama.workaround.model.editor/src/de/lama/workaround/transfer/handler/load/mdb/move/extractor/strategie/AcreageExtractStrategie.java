@@ -34,6 +34,13 @@ public class AcreageExtractStrategie extends AbstractExtractStrategie<Acreage>
             District district = find(gemarkung);
             newAcreage.setDistrict(district);
 
+            if ((newAcreage.getAcreageName() == null) || (newAcreage.getDistrict() == null))
+            {
+                String flidColumn = DBKonstanten.COLUMN_FLID;
+                Integer flid = (Integer) extractObjectFrom(tableResult, flidColumn);
+                System.out.println("Acreage missing: " + flid);
+                continue;
+            }
             add(newAcreage);
         }
         return newElements();

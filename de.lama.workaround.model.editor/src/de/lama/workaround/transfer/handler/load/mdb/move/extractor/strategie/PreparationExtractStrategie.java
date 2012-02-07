@@ -28,7 +28,13 @@ public class PreparationExtractStrategie extends AbstractExtractStrategie<Prepar
             tableColumn = DBKonstanten.COLUMN_ABKUERZUNG;
             String abkuerzung = extractStringFrom(tableResult, tableColumn);
             newPreparation.setAbbreviation(abkuerzung);
-
+            if ((newPreparation.getAbbreviation() == null) || (newPreparation.getPreparationName() == null))
+            {
+                String pridColumn = DBKonstanten.COLUMN_PRID;
+                Integer prid = (Integer) extractObjectFrom(tableResult, pridColumn);
+                System.out.println("Preparation missing: " + prid);
+                continue;
+            }
             add(newPreparation);
         }
         return newElements();

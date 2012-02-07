@@ -245,13 +245,13 @@ public interface WorkaroundPackage extends EPackage
     int JOB = 3;
 
     /**
-     * The feature id for the '<em><b>Operations</b></em>' reference.
+     * The feature id for the '<em><b>Operation</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int JOB__OPERATIONS = 0;
+    int JOB__OPERATION = 0;
 
     /**
      * The feature id for the '<em><b>Vehicles</b></em>' reference list.
@@ -886,15 +886,15 @@ public interface WorkaroundPackage extends EPackage
     EClass getJob();
 
     /**
-     * Returns the meta object for the reference '{@link workaround.Job#getOperations <em>Operations</em>}'.
+     * Returns the meta object for the reference '{@link workaround.Job#getOperation <em>Operation</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Operations</em>'.
-     * @see workaround.Job#getOperations()
+     * @return the meta object for the reference '<em>Operation</em>'.
+     * @see workaround.Job#getOperation()
      * @see #getJob()
      * @generated
      */
-    EReference getJob_Operations();
+    EReference getJob_Operation();
 
     /**
      * Returns the meta object for the reference list '{@link workaround.Job#getVehicles <em>Vehicles</em>}'.
@@ -1508,12 +1508,12 @@ public interface WorkaroundPackage extends EPackage
         EClass JOB = eINSTANCE.getJob();
 
         /**
-         * The meta object literal for the '<em><b>Operations</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
          */
-        EReference JOB__OPERATIONS = eINSTANCE.getJob_Operations();
+        EReference JOB__OPERATION = eINSTANCE.getJob_Operation();
 
         /**
          * The meta object literal for the '<em><b>Vehicles</b></em>' reference list feature.

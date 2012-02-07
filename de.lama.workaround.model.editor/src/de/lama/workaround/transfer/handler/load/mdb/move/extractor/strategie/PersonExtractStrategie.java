@@ -28,7 +28,13 @@ public class PersonExtractStrategie extends AbstractExtractStrategie<Person>
             tableColumn = DBKonstanten.COLUMN_VORNAME;
             String vorname = extractStringFrom(tableResult, tableColumn);
             newPerson.setFirstName(vorname);
-
+            if ((newPerson.getFirstName() == null) || (newPerson.getLastName() == null))
+            {
+                String pidColumn = DBKonstanten.COLUMN_PID;
+                Integer pid = (Integer) extractObjectFrom(tableResult, pidColumn);
+                System.out.println("Person missing: " + pid);
+                continue;
+            }
             add(newPerson);
         }
         return newElements();

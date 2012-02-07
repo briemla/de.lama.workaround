@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link workaround.Job#getOperations <em>Operations</em>}</li>
+ *   <li>{@link workaround.Job#getOperation <em>Operation</em>}</li>
  *   <li>{@link workaround.Job#getVehicles <em>Vehicles</em>}</li>
  *   <li>{@link workaround.Job#getMachines <em>Machines</em>}</li>
  *   <li>{@link workaround.Job#getAcreage <em>Acreage</em>}</li>
@@ -41,30 +41,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Job extends EObject
 {
     /**
-     * Returns the value of the '<em><b>Operations</b></em>' reference.
+     * Returns the value of the '<em><b>Operation</b></em>' reference.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Operations</em>' reference isn't clear,
+     * If the meaning of the '<em>Operation</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Operations</em>' reference.
-     * @see #setOperations(Operation)
-     * @see workaround.WorkaroundPackage#getJob_Operations()
+     * @return the value of the '<em>Operation</em>' reference.
+     * @see #setOperation(Operation)
+     * @see workaround.WorkaroundPackage#getJob_Operation()
      * @model required="true"
      * @generated
      */
-    Operation getOperations();
+    Operation getOperation();
 
     /**
-     * Sets the value of the '{@link workaround.Job#getOperations <em>Operations</em>}' reference.
+     * Sets the value of the '{@link workaround.Job#getOperation <em>Operation</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Operations</em>' reference.
-     * @see #getOperations()
+     * @param value the new value of the '<em>Operation</em>' reference.
+     * @see #getOperation()
      * @generated
      */
-    void setOperations(Operation value);
+    void setOperation(Operation value);
 
     /**
      * Returns the value of the '<em><b>Vehicles</b></em>' reference list.

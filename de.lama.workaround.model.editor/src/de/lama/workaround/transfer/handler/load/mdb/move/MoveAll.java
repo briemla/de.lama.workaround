@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 import workaround.Acreage;
 import workaround.District;
+import workaround.Job;
 import workaround.Machine;
 import workaround.Operation;
 import workaround.Person;
@@ -11,6 +12,7 @@ import workaround.Preparation;
 import workaround.Vehicle;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.AcreageExtractStrategie;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.DistrictExtractStrategie;
+import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.JobExtractStrategie;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.MachineExtractStrategie;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.OperationExtractStrategie;
 import de.lama.workaround.transfer.handler.load.mdb.move.extractor.strategie.PersonExtractStrategie;
@@ -53,6 +55,11 @@ public class MoveAll
     public static Move<Preparation> preparationsFrom(Connection connection)
     {
         return new Move<Preparation>(new PreparationExtractStrategie()).from(connection);
+    }
+
+    public static Move<Job> jobsFrom(Connection connection)
+    {
+        return new Move<Job>(new JobExtractStrategie(connection)).from(connection);
     }
 
 }

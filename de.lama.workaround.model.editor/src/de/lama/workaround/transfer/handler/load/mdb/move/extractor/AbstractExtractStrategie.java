@@ -29,8 +29,15 @@ public abstract class AbstractExtractStrategie<T> implements IExtractStrategie<T
     protected String extractStringFrom(ResultSet tableResult, String tableColumn) throws SQLException
     {
         int columnIndex = tableResult.findColumn(tableColumn);
-        String nachname = tableResult.getString(columnIndex);
-        return nachname;
+        String text = tableResult.getString(columnIndex);
+        return text;
+    }
+
+    protected Object extractObjectFrom(ResultSet tableResult, String tableColumn) throws SQLException
+    {
+        int columnIndex = tableResult.findColumn(tableColumn);
+        Object text = tableResult.getObject(columnIndex);
+        return text;
     }
 
     protected abstract EList<T> installedElements();

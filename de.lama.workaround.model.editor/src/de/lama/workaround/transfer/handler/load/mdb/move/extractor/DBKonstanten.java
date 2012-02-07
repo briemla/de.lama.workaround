@@ -52,11 +52,11 @@ public abstract class DBKonstanten
 
     // tblArbeit
     /** ArbID Arbeit ID */
-    public static final String arbid = "ArbID";
+    public static final String COLUMN_ARBID = "ArbID";
     /** StartFahrdatum */
-    public static final String startFahrdatum = "StartFahrdatum";
+    public static final String COLUMN_STARTFAHRDATUM = "StartFahrdatum";
     /** EndeFahrdatum */
-    public static final String endeFahrdatum = "EndeFahrdatum";
+    public static final String COLUMN_ENDFAHRDATUM = "EndeFahrdatum";
     /** PräparatEins */
     public static final String praeparatEins = "PräparatEins";
     /** PräparatZwei */
@@ -64,15 +64,15 @@ public abstract class DBKonstanten
     /** PräparatDrei */
     public static final String praeparatDrei = "PräparatDrei";
     /** Bemerkung */
-    public static final String bemerkung = "Bemerkung";
+    public static final String COLUMN_BEMERKUNG = "Bemerkung";
     /** MaschinenArbeit */
     public static final String maschinenArbeit = "MaschinenArbeit";
 
     // tblArbeitsvorgang
     /** ArbvID */
-    public static final String arbvID = "ArbvID";
+    public static final String COLUMN_ARBVID = "ArbvID";
     /** Tätigkeit */
-    public static final String taetigkeit = "Tätigkeit";
+    public static final String COLUMN_TAETIGKEIT = "Tätigkeit";
 
     // tblEinsaat
     /** EID Einsaat ID */
@@ -84,7 +84,7 @@ public abstract class DBKonstanten
 
     // tblFahrzeug
     /** FZID Fahrzeug ID */
-    public static final String fzid = "FZID";
+    public static final String COLUMN_FZID = "FZID";
     /** Bezeichnung */
     public static final String COLUMN_BEZEICHNUNG = "Bezeichnung";
     /** Kennzeichen */
@@ -92,7 +92,7 @@ public abstract class DBKonstanten
 
     // tblFläche
     /** FLID Fläche/Flurgrundstücks ID */
-    public static final String flid = "FLID";
+    public static final String COLUMN_FLID = "FLID";
     /** Flächenname */
     public static final String COLUMN_NAME = "Name";
     /** Gemarkung */
@@ -112,11 +112,11 @@ public abstract class DBKonstanten
 
     // tblGerät
     /** GID Geräte ID */
-    public static final String gid = "GID";
+    public static final String COLUMN_GID = "GID";
 
     // tblPerson
     /** PID Personen ID */
-    public static final String pid = "PID";
+    public static final String COLUMN_PID = "PID";
     /** Nachname */
     public static final String COLUMN_NACHNAME = "Nachname";
     /** Vorname */
@@ -138,7 +138,7 @@ public abstract class DBKonstanten
 
     // tblPräparat
     /** PRID Präparat ID */
-    public static final String prid = "PRID";
+    public static final String COLUMN_PRID = "PRID";
     /** Abkürzung */
     public static final String COLUMN_ABKUERZUNG = "Abkürzung";
 
@@ -170,9 +170,9 @@ public abstract class DBKonstanten
     /** TEID ThunElement ID */
     public static final String teid = "TEID";
     /** Startdatum */
-    public static final String startdatum = "Startdatum";
+    public static final String COLUMN_STARTDATUM = "Startdatum";
     /** Enddatum */
-    public static final String enddatum = "Enddatum";
+    public static final String COLUMN_ENDDATUM = "Enddatum";
     /** Element 1 */
     public static final String element = "Element";
 
@@ -191,4 +191,8 @@ public abstract class DBKonstanten
     // Linktabellen
     /** LinkID */
     public static final String linkID = "LinkID";
+    public static final String QRY_JOB = "qryJob";
+    public static final String COLUMN_PRAEPARAT_EINS = "PräparatEins";
+    public static final String COLUMN_PRAEPARAT_ZWEI = "PräparatZwei";
+    public static final String COLUMN_PRAEPARAT_DREI = "PräparatDrei";
 }

@@ -67,7 +67,7 @@ public class JobItemProvider
         {
             super.getPropertyDescriptors(object);
 
-            addOperationsPropertyDescriptor(object);
+            addOperationPropertyDescriptor(object);
             addVehiclesPropertyDescriptor(object);
             addMachinesPropertyDescriptor(object);
             addAcreagePropertyDescriptor(object);
@@ -83,20 +83,20 @@ public class JobItemProvider
     }
 
     /**
-     * This adds a property descriptor for the Operations feature.
+     * This adds a property descriptor for the Operation feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOperationsPropertyDescriptor(Object object)
+    protected void addOperationPropertyDescriptor(Object object)
     {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Job_operations_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Job_operations_feature", "_UI_Job_type"),
-                 WorkaroundPackage.Literals.JOB__OPERATIONS,
+                 getString("_UI_Job_operation_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Job_operation_feature", "_UI_Job_type"),
+                 WorkaroundPackage.Literals.JOB__OPERATION,
                  true,
                  false,
                  true,

@@ -28,7 +28,13 @@ public class VehicleExtractStrategie extends AbstractExtractStrategie<Vehicle>
             tableColumn = DBKonstanten.COLUMN_KENNZEICHEN;
             String kennzeichen = extractStringFrom(tableResult, tableColumn);
             newVehicle.setLicenceNumber(kennzeichen);
-
+            if (newVehicle.getLicenceNumber() == null)
+            {
+                String fzidColumn = DBKonstanten.COLUMN_FZID;
+                Integer fzid = (Integer) extractObjectFrom(tableResult, fzidColumn);
+                System.out.println("Vehicle missing: " + fzid);
+                continue;
+            }
             add(newVehicle);
         }
         return newElements();
