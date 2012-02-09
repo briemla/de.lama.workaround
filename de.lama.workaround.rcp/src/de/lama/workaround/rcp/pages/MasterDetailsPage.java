@@ -6,29 +6,55 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.MasterDetailsBlock;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.editor.FormPage;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 
-public class MasterDetailsPage extends FormPage
+import de.lama.workaround.rcp.WorkaroundEditingDomain;
+
+public abstract class MasterDetailsPage extends FormPage
 {
 
-    private final MasterDetailsBlock pageContent;
+    private final FormToolkit toolkit;
+    private final WorkaroundEditingDomain editingDomain;
+    private MasterDetailsBlock pageContent;
 
-    public MasterDetailsPage(MasterDetailsBlock pageContent, FormEditor editor, String id, String title)
+    public MasterDetailsPage(FormEditor editor, FormToolkit toolkit, WorkaroundEditingDomain editingDomain, String id, String title)
     {
         super(editor, id, title);
-        this.pageContent = pageContent;
+        this.toolkit = toolkit;
+        this.editingDomain = editingDomain;
     }
 
     @Override
     protected void createFormContent(IManagedForm managedForm)
     {
-        ScrolledForm form = managedForm.getForm();
+        final ScrolledForm form = managedForm.getForm();
         form.setText(getTitle());
-        Composite pageBody = form.getBody();
-        pageContent.createContent(managedForm, pageBody);
+        final Composite pageBody = form.getBody();
+        pageContent().createContent(managedForm, pageBody);
 
-        GridLayout pageLayout = new GridLayout();
-        pageBody.setLayout(pageLayout);
+        pageBody.setLayout(new GridLayout());
     }
+
+    public FormToolkit getToolkit()
+    {
+        return toolkit;
+    }
+
+    public WorkaroundEditingDomain getEditingDomain()
+    {
+        return editingDomain;
+    }
+
+    protected MasterDetailsBlock pageContent()
+    {
+        if (pageContent == null)
+        {
+            pageContent = createPageContent();
+        }
+        return pageContent;
+    }
+
+    protected abstract MasterDetailsBlock createPageContent();
 
 }

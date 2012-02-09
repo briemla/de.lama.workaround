@@ -7,21 +7,23 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
-public abstract class WorkaroundComponent
+import de.lama.workaround.rcp.jface.components.builded.BuildedComponent;
+
+public abstract class Component
 {
 
     private FormToolkit toolkit;
     private String description;
 
-    public WorkaroundComponent with(FormToolkit toolkit)
+    public Component with(FormToolkit toolkit)
     {
         this.toolkit = toolkit;
         return this;
     }
 
-    public WorkaroundComponent build(String firstNameText)
+    public Component build(String description)
     {
-        this.description = firstNameText;
+        this.description = description;
         return this;
     }
 
@@ -39,8 +41,8 @@ public abstract class WorkaroundComponent
 
     protected void createDescriptionOn(Composite parent)
     {
-        Label description = toolkit.createLabel(parent, this.description);
-        GridData descriptionData = new GridData(SWT.BEGINNING, SWT.TOP, true, false);
+        Label description = toolkit.createLabel(parent, description());
+        GridData descriptionData = new GridData(SWT.FILL, SWT.TOP, true, false);
         description.setLayoutData(descriptionData);
     }
 
@@ -48,9 +50,13 @@ public abstract class WorkaroundComponent
     {
         Composite container = toolkit.createComposite(parent);
         container.setLayout(new GridLayout());
-        GridData containerData = new GridData(SWT.BEGINNING, SWT.TOP, true, false);
+        GridData containerData = new GridData(SWT.FILL, SWT.TOP, true, false);
         container.setLayoutData(containerData);
         return container;
     }
 
+    protected GridData fillHorizontal()
+    {
+        return new GridData(SWT.FILL, SWT.TOP, true, false);
+    }
 }

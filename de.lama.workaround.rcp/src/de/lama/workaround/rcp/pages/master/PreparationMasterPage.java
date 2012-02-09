@@ -7,14 +7,14 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
-import de.lama.workaround.rcp.pages.details.EditPersonPage;
+import de.lama.workaround.rcp.pages.details.EditPreparationPage;
 
-public class PersonMasterPage extends MasterPage
+public class PreparationMasterPage extends MasterPage
 {
 
-    private DetailsPage detailsPage = null;
+    private DetailsPage detailsPage;
 
-    public PersonMasterPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain)
+    public PreparationMasterPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain)
     {
         super(toolkit, editingDomain);
     }
@@ -22,13 +22,13 @@ public class PersonMasterPage extends MasterPage
     @Override
     protected EStructuralFeature masterFeature()
     {
-        return WorkaroundPackage.Literals.WORKAROUND__PERSON_LIST;
+        return WorkaroundPackage.Literals.WORKAROUND__PREPARATION_LIST;
     }
 
     @Override
     protected EClass masterClass()
     {
-        return WorkaroundPackage.Literals.PERSON;
+        return WorkaroundPackage.Literals.PREPARATION;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class PersonMasterPage extends MasterPage
     {
         if (detailsPage == null)
         {
-            detailsPage = new EditPersonPage();
+            detailsPage = new EditPreparationPage();
         }
         return detailsPage;
     }
@@ -45,14 +45,15 @@ public class PersonMasterPage extends MasterPage
     protected FeatureColumnMapping columnFeatureMapping()
     {
         FeatureColumnMapping features = new FeatureColumnMapping();
-        features.put("Nachname", WorkaroundPackage.Literals.PERSON__LAST_NAME);
-        features.put("Vorname", WorkaroundPackage.Literals.PERSON__FIRST_NAME);
+        features.put("Name", WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME);
+        features.put("Abkürzung", WorkaroundPackage.Literals.PREPARATION__ABBREVIATION);
         return features;
     }
 
     @Override
     protected String contentTitle()
     {
-        return "Personen";
+        return "Präparate";
     }
+
 }

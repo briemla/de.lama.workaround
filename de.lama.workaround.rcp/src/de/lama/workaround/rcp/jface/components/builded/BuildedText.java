@@ -1,14 +1,14 @@
-package de.lama.workaround.rcp.jface.components;
+package de.lama.workaround.rcp.jface.components.builded;
 
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Control;
 
-public class BuildedTextComponent extends BuildedComponent
+public class BuildedText extends BuildedComponent
 {
 
-    public BuildedTextComponent(Control control)
+    public BuildedText(Control control)
     {
         super(control);
     }

@@ -24,8 +24,13 @@ import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.util.WorkaroundAdapterFactory;
-import de.lama.workaround.rcp.pages.MasterDetailsPage;
-import de.lama.workaround.rcp.pages.master.PersonMasterPage;
+import de.lama.workaround.rcp.pages.combined.AcreagePage;
+import de.lama.workaround.rcp.pages.combined.DistrictPage;
+import de.lama.workaround.rcp.pages.combined.MachinePage;
+import de.lama.workaround.rcp.pages.combined.OperationPage;
+import de.lama.workaround.rcp.pages.combined.PersonPage;
+import de.lama.workaround.rcp.pages.combined.PreparationPage;
+import de.lama.workaround.rcp.pages.combined.VehiclePage;
 
 public class WorkaroundEditor extends FormEditor implements IEditingDomainProvider
 {
@@ -59,8 +64,17 @@ public class WorkaroundEditor extends FormEditor implements IEditingDomainProvid
 
         try
         {
-            PersonMasterPage editPersons = new PersonMasterPage(getToolkit(), getEditingDomain());
-            addPage(new MasterDetailsPage(editPersons, this, "page.person.edit", "Personen"));
+            addPage(new PersonPage(this, getToolkit(), getEditingDomain()));
+            addPage(new OperationPage(this, getToolkit(), getEditingDomain()));
+            addPage(new VehiclePage(this, getToolkit(), getEditingDomain()));
+            addPage(new MachinePage(this, getToolkit(), getEditingDomain()));
+            addPage(new PreparationPage(this, getToolkit(), getEditingDomain()));
+            addPage(new AcreagePage(this, getToolkit(), getEditingDomain()));
+            addPage(new DistrictPage(this, getToolkit(), getEditingDomain()));
+
+            // addPage(new JobPage(this, getToolkit(), getEditingDomain()));
+            // TODO Combobox braucht items (über EMF)
+
         }
         catch (PartInitException e)
         {

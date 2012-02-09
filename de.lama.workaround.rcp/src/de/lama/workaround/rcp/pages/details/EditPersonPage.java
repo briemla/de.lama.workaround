@@ -1,43 +1,40 @@
 package de.lama.workaround.rcp.pages.details;
 
-import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
-import de.lama.workaround.rcp.WorkaroundEditingDomain;
-import de.lama.workaround.rcp.jface.components.WorkaroundComponent;
-import de.lama.workaround.rcp.jface.components.WorkaroundTextField;
+import de.lama.workaround.rcp.jface.components.Component;
+import de.lama.workaround.rcp.jface.components.TextField;
 
-public class EditPersonPage extends WorkaroundDetailsPage
+public class EditPersonPage extends DetailsPage
 {
 
-    public EditPersonPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain, IObservableValue masterObservable)
+    public EditPersonPage()
     {
-        super(toolkit, editingDomain, masterObservable);
+        super();
     }
 
     @Override
     protected void createPageContentOn(Composite parent)
     {
-        createFirstName(parent);
-        createLastName(parent);
+        createFirstNameOn(parent);
+        createLastNameOn(parent);
     }
 
-    private void createFirstName(Composite parent)
+    private void createFirstNameOn(Composite parent)
     {
-        EStructuralFeature firstName = WorkaroundPackage.Literals.PERSON__FIRST_NAME;
-        WorkaroundComponent workaroundTextField = new WorkaroundTextField();
+        EStructuralFeature model = WorkaroundPackage.Literals.PERSON__FIRST_NAME;
+        Component workaroundTextField = new TextField();
         String firstNameText = "Vorname";
-        workaroundTextField.build(firstNameText).with(toolkit()).on(parent).and(bindDelayed()).to(firstName);
+        workaroundTextField.build(firstNameText).with(toolkit()).on(parent).and(bindDelayed()).to(model);
     }
 
-    private void createLastName(Composite parent)
+    private void createLastNameOn(Composite parent)
     {
-        EStructuralFeature firstName = WorkaroundPackage.Literals.PERSON__LAST_NAME;
-        WorkaroundComponent workaroundTextField = new WorkaroundTextField();
-        String firstNameText = "Nachname";
-        workaroundTextField.build(firstNameText).with(toolkit()).on(parent).and(bindDelayed()).to(firstName);
+        EStructuralFeature model = WorkaroundPackage.Literals.PERSON__LAST_NAME;
+        Component workaroundTextField = new TextField();
+        String firstName = "Nachname";
+        workaroundTextField.build(firstName).with(toolkit()).on(parent).and(bindDelayed()).to(model);
     }
 }

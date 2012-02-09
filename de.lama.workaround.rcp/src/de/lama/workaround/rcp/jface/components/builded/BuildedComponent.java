@@ -1,4 +1,4 @@
-package de.lama.workaround.rcp.jface.components;
+package de.lama.workaround.rcp.jface.components.builded;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.UpdateValueStrategy;

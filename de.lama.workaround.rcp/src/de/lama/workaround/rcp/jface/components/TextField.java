@@ -1,11 +1,13 @@
 package de.lama.workaround.rcp.jface.components;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 
-public class WorkaroundTextField extends WorkaroundComponent
+import de.lama.workaround.rcp.jface.components.builded.BuildedComponent;
+import de.lama.workaround.rcp.jface.components.builded.BuildedText;
+
+public class TextField extends Component
 {
 
     private static final String EMPTY = "";
@@ -16,7 +18,7 @@ public class WorkaroundTextField extends WorkaroundComponent
         Composite container = createContainerOn(parent);
         createDescriptionOn(container);
         Text textField = toolkit().createText(container, EMPTY, SWT.FLAT);
-        textField.setLayoutData(new GridData(SWT.BEGINNING, SWT.TOP, true, false));
-        return new BuildedTextComponent(textField);
+        textField.setLayoutData(fillHorizontal());
+        return new BuildedText(textField);
     }
 }

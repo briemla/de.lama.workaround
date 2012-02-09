@@ -2,7 +2,10 @@ package de.lama.workaround.rcp.pages.details;
 
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
@@ -11,15 +14,16 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.jface.binder.WidgetBinder;
+import de.lama.workaround.rcp.jface.listener.Save;
 
-public abstract class WorkaroundDetailsPage implements IDetailsPage
+public abstract class DetailsPage implements IDetailsPage
 {
 
-    private final WorkaroundEditingDomain editingDomain;
-    private final FormToolkit toolkit;
-    private final IObservableValue masterObservable;
+    private WorkaroundEditingDomain editingDomain;
+    private FormToolkit toolkit;
+    private IObservableValue masterObservable;
 
-    public WorkaroundDetailsPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain, IObservableValue masterObservable)
+    public void initialize(FormToolkit toolkit, WorkaroundEditingDomain editingDomain, IObservableValue masterObservable)
     {
         this.toolkit = toolkit;
         this.editingDomain = editingDomain;
@@ -51,12 +55,19 @@ public abstract class WorkaroundDetailsPage implements IDetailsPage
     {
         createPageContentOn(parent);
         createLayout(parent);
+        addSaveButton(parent);
+    }
+
+    private void addSaveButton(Composite parent)
+    {
+        final Button save = toolkit.createButton(parent, "Speichern", SWT.PUSH);
+        save.addSelectionListener(new Save());
+        save.setLayoutData(new GridData(SWT.BEGINNING, SWT.TOP, false, false));
     }
 
     private void createLayout(Composite parent)
     {
         GridLayout layout = new GridLayout();
-        layout.numColumns = 2;
         layout.makeColumnsEqualWidth = true;
         parent.setLayout(layout);
     }
