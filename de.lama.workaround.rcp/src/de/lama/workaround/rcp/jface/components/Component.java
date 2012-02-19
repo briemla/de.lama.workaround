@@ -59,4 +59,9 @@ public abstract class Component
     {
         return new GridData(SWT.FILL, SWT.TOP, true, false);
     }
+
+    protected GridData fillBoth()
+    {
+        return new GridData(SWT.FILL, SWT.FILL, true, true);
+    }
 }

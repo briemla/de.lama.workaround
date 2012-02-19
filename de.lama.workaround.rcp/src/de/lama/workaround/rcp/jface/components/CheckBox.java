@@ -5,13 +5,13 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
 import de.lama.workaround.rcp.jface.components.builded.BuildedCheckBox;
-import de.lama.workaround.rcp.jface.components.builded.BuildedComponent;
+import de.lama.workaround.rcp.jface.components.builded.BuildedPrimitive;
 
 public class CheckBox extends Component
 {
 
     @Override
-    public BuildedComponent on(Composite parent)
+    public BuildedPrimitive on(Composite parent)
     {
         Button checkbox = toolkit().createButton(parent, description(), SWT.CHECK);
         checkbox.setLayoutData(fillHorizontal());

@@ -5,7 +5,7 @@ import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Control;
 
-public class BuildedText extends BuildedComponent
+public class BuildedText extends BuildedPrimitive
 {
 
     public BuildedText(Control control)

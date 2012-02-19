@@ -4,7 +4,7 @@ import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.widgets.Button;
 
-public class BuildedCheckBox extends BuildedComponent
+public class BuildedCheckBox extends BuildedPrimitive
 {
 
     public BuildedCheckBox(Button checkbox)
@@ -15,6 +15,7 @@ public class BuildedCheckBox extends BuildedComponent
     @Override
     protected IWidgetValueProperty widgetProperty()
     {
+
         return WidgetProperties.selection();
     }
 

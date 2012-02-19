@@ -4,33 +4,23 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
-import org.eclipse.swt.widgets.Control;
 
 import de.lama.workaround.rcp.jface.binder.WidgetBinder;
 
 public abstract class BuildedComponent
 {
-
-    private final Control buildedComponent;
     private WidgetBinder binder;
-
-    public BuildedComponent(Control control)
-    {
-        this.buildedComponent = control;
-    }
 
     public BuildedComponent and(WidgetBinder binder)
     {
         this.binder = binder;
-        this.binder.setWidgetProperty(widgetProperty());
         return this;
     }
 
-    public void to(EStructuralFeature firstName)
+    public void to(EStructuralFeature feature)
     {
-        IObservableValue targetElement = binder.createObservableFor(buildedComponent);
-        IObservableValue modelElement = binder.createObservableFor(firstName);
+        IObservableValue targetElement = createTargetObservableWith(binder);
+        IObservableValue modelElement = binder.createObservableFor(feature);
 
         DataBindingContext context = new DataBindingContext();
         UpdateValueStrategy targetToModel = new UpdateValueStrategy(UpdateValueStrategy.POLICY_UPDATE);
@@ -38,6 +28,5 @@ public abstract class BuildedComponent
         context.bindValue(targetElement, modelElement, targetToModel, modelToTarget);
     }
 
-    protected abstract IWidgetValueProperty widgetProperty();
-
+    protected abstract IObservableValue createTargetObservableWith(WidgetBinder binder);
 }

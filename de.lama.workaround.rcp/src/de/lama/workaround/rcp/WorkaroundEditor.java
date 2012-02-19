@@ -110,6 +110,8 @@ public class WorkaroundEditor extends FormEditor implements IEditingDomainProvid
         // WorkaroundItemProviderAdapterFactory());
         // adapterFactory.addAdapterFactory(new
         // ReflectiveItemProviderAdapterFactory());
+        // adapterFactory.addAdapterFactory(new WorkaroundAdapterFactory());
+        // adapterFactory.addAdapterFactory(adapterFactory)
         WorkaroundAdapterFactory adapterFactory = new WorkaroundAdapterFactory();
         editingDomain = new WorkaroundEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 

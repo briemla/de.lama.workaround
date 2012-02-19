@@ -1,10 +1,15 @@
 package de.lama.workaround.rcp.pages.details;
 
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.property.value.IValueProperty;
+import org.eclipse.emf.databinding.EMFObservables;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.widgets.Composite;
 
 import workaround.WorkaroundPackage;
-import de.lama.workaround.rcp.jface.components.ComboBox;
+import de.lama.workaround.rcp.jface.components.ListItemViewer;
 import de.lama.workaround.rcp.jface.components.TextField;
 
 public class EditAcreagePage extends DetailsPage
@@ -37,10 +42,25 @@ public class EditAcreagePage extends DetailsPage
 
     private void createDistrictOn(Composite parent)
     {
-        ComboBox comboBoc = new ComboBox();
+        IValueProperty property = createDistrictProperty();
+        IObservableList districts = createDistrictObservable();
+        ListItemViewer list = new ListItemViewer(districts, property);
         String district = "Gemarkung";
         EStructuralFeature model = WorkaroundPackage.Literals.ACREAGE__DISTRICT;
-        comboBoc.build(district).with(toolkit()).on(parent).and(bind()).to(model);
+        list.build(district).with(toolkit()).on(parent).and(bind()).to(model);
+    }
+
+    protected IValueProperty createDistrictProperty()
+    {
+        EStructuralFeature properties = WorkaroundPackage.Literals.DISTRICT__DISTRICT_NAME;
+        return EMFProperties.value(properties);
+    }
+
+    protected IObservableList createDistrictObservable()
+    {
+        EObject master = editingDomain().getWorkaround();
+        EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__DISTRICT_LIST;
+        return EMFObservables.observeList(master, feature);
     }
 
     private void createPlotOn(Composite parent)
