@@ -1,5 +1,7 @@
-package de.lama.workaround.rcp.pages;
+package de.lama.workaround.rcp.pages.combined;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.IManagedForm;
@@ -32,6 +34,7 @@ public abstract class MasterDetailsPage extends FormPage
         form.setText(getTitle());
         final Composite pageBody = form.getBody();
         pageContent().createContent(managedForm, pageBody);
+        pageBody.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false));
 
         pageBody.setLayout(new GridLayout());
     }

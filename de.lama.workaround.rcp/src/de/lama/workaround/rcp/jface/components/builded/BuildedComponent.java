@@ -28,5 +28,10 @@ public abstract class BuildedComponent
         context.bindValue(targetElement, modelElement, targetToModel, modelToTarget);
     }
 
+    protected WidgetBinder getBinder()
+    {
+        return binder;
+    }
+
     protected abstract IObservableValue createTargetObservableWith(WidgetBinder binder);
 }

@@ -13,6 +13,7 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
+import de.lama.workaround.rcp.jface.binder.MultiWidgetBinder;
 import de.lama.workaround.rcp.jface.binder.WidgetBinder;
 import de.lama.workaround.rcp.jface.listener.Save;
 
@@ -43,6 +44,11 @@ public abstract class DetailsPage implements IDetailsPage
     protected WidgetBinder bindDelayed()
     {
         return new DelayedWidgetBinder(masterObservable, editingDomain());
+    }
+
+    protected WidgetBinder bindMulti()
+    {
+        return new MultiWidgetBinder(masterObservable, editingDomain());
     }
 
     protected FormToolkit toolkit()

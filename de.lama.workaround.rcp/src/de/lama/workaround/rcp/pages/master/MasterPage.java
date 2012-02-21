@@ -25,8 +25,9 @@ import org.eclipse.ui.forms.widgets.Section;
 import workaround.Workaround;
 import workaround.WorkaroundFactory;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
-import de.lama.workaround.rcp.jface.listener.AddElement;
+import de.lama.workaround.rcp.jface.listener.CreateElement;
 import de.lama.workaround.rcp.jface.listener.RemoveElement;
+import de.lama.workaround.rcp.pages.FeatureColumnMapping;
 import de.lama.workaround.rcp.pages.WorkaroundMasterDetailsBlock;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 
@@ -52,7 +53,7 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
     {
         Composite buttonArea = getToolkit().createComposite(parent);
         Button add = getToolkit().createButton(buttonArea, "Neu", SWT.PUSH);
-        add.addSelectionListener(new AddElement(getEditingDomain(), getEditingDomain().getWorkaround(), masterClass(), masterFeature()));
+        add.addSelectionListener(new CreateElement(getEditingDomain(), getEditingDomain().getWorkaround(), masterClass(), masterFeature()));
 
         GridData addData = new GridData(SWT.FILL, SWT.TOP, false, false);
         add.setLayoutData(addData);
@@ -65,7 +66,7 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
         GridData removeData = new GridData(SWT.FILL, SWT.TOP, false, false);
         remove.setLayoutData(removeData);
 
-        GridData buttonAreaData = new GridData(SWT.BEGINNING, SWT.FILL, false, true);
+        GridData buttonAreaData = new GridData(SWT.BEGINNING, SWT.FILL, false, false);
         buttonArea.setLayoutData(buttonAreaData);
     }
 

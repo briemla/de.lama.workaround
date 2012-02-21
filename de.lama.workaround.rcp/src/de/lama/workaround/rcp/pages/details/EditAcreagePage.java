@@ -52,8 +52,7 @@ public class EditAcreagePage extends DetailsPage
 
     protected IValueProperty createDistrictProperty()
     {
-        EStructuralFeature properties = WorkaroundPackage.Literals.DISTRICT__DISTRICT_NAME;
-        return EMFProperties.value(properties);
+        return EMFProperties.value(WorkaroundPackage.Literals.DISTRICT__DISTRICT_NAME);
     }
 
     protected IObservableList createDistrictObservable()

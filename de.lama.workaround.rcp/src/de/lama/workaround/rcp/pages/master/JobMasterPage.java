@@ -8,14 +8,14 @@ import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.pages.FeatureColumnMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
-import de.lama.workaround.rcp.pages.details.EditOperationPage;
+import de.lama.workaround.rcp.pages.details.EditJobPage;
 
-public class OperationMasterPage extends MasterPage
+public class JobMasterPage extends MasterPage
 {
 
-    private EditOperationPage detailsPage = null;
+    private DetailsPage detailsPage;
 
-    public OperationMasterPage(final FormToolkit toolkit, final WorkaroundEditingDomain editingDomain)
+    public JobMasterPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain)
     {
         super(toolkit, editingDomain);
     }
@@ -23,13 +23,13 @@ public class OperationMasterPage extends MasterPage
     @Override
     protected EStructuralFeature masterFeature()
     {
-        return WorkaroundPackage.Literals.WORKAROUND__OPERATION_LIST;
+        return WorkaroundPackage.Literals.WORKAROUND__JOB_LIST;
     }
 
     @Override
     protected EClass masterClass()
     {
-        return WorkaroundPackage.Literals.OPERATION;
+        return WorkaroundPackage.Literals.JOB;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class OperationMasterPage extends MasterPage
     {
         if (detailsPage == null)
         {
-            detailsPage = new EditOperationPage();
+            detailsPage = new EditJobPage();
         }
         return detailsPage;
     }
@@ -46,7 +46,10 @@ public class OperationMasterPage extends MasterPage
     protected FeatureColumnMapping columnFeatureMapping()
     {
         FeatureColumnMapping features = new FeatureColumnMapping();
-        features.put("Arbeitsvorgang", WorkaroundPackage.Literals.OPERATION__TASK);
+        features.put("Startzeit", WorkaroundPackage.Literals.JOB__START_DATE);
+        features.put("Endzeit", WorkaroundPackage.Literals.JOB__END_DATE);
+        features.put("Tätigkeit", WorkaroundPackage.Literals.JOB__OPERATION);
+        features.put("Fläche", WorkaroundPackage.Literals.JOB__ACREAGE);
         return features;
     }
 

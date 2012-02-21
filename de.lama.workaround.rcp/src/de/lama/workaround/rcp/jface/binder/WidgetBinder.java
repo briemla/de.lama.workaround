@@ -10,13 +10,13 @@ import org.eclipse.swt.widgets.Control;
 
 public class WidgetBinder
 {
-    private final IObservableValue masterObservable;
+    private final IObservableValue modelMaster;
     private final EditingDomain editingDomain;
     private IWidgetValueProperty uiProperty;
 
-    public WidgetBinder(IObservableValue master, EditingDomain editingDomain)
+    public WidgetBinder(IObservableValue modelMaster, EditingDomain editingDomain)
     {
-        masterObservable = master;
+        this.modelMaster = modelMaster;
         this.editingDomain = editingDomain;
     }
 
@@ -28,7 +28,7 @@ public class WidgetBinder
     public IObservableValue createObservableFor(EStructuralFeature feature)
     {
         IEMFValueProperty value = EMFEditProperties.value(editingDomain, feature);
-        return value.observeDetail(masterObservable);
+        return value.observeDetail(modelMaster);
     }
 
     protected IWidgetValueProperty uiProperty()
@@ -39,6 +39,16 @@ public class WidgetBinder
     public void setWidgetProperty(IWidgetValueProperty uiProperty)
     {
         this.uiProperty = uiProperty;
+    }
+
+    public IObservableValue getModelMaster()
+    {
+        return modelMaster;
+    }
+
+    public EditingDomain getEditingDomain()
+    {
+        return editingDomain;
     }
 
 }

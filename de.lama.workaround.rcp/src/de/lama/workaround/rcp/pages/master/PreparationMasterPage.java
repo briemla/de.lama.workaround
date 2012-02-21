@@ -6,6 +6,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
+import de.lama.workaround.rcp.pages.FeatureColumnMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 import de.lama.workaround.rcp.pages.details.EditPreparationPage;
 

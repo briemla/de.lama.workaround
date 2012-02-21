@@ -26,6 +26,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import workaround.util.WorkaroundAdapterFactory;
 import de.lama.workaround.rcp.pages.combined.AcreagePage;
 import de.lama.workaround.rcp.pages.combined.DistrictPage;
+import de.lama.workaround.rcp.pages.combined.JobPage;
 import de.lama.workaround.rcp.pages.combined.MachinePage;
 import de.lama.workaround.rcp.pages.combined.OperationPage;
 import de.lama.workaround.rcp.pages.combined.PersonPage;
@@ -71,10 +72,7 @@ public class WorkaroundEditor extends FormEditor implements IEditingDomainProvid
             addPage(new PreparationPage(this, getToolkit(), getEditingDomain()));
             addPage(new AcreagePage(this, getToolkit(), getEditingDomain()));
             addPage(new DistrictPage(this, getToolkit(), getEditingDomain()));
-
-            // addPage(new JobPage(this, getToolkit(), getEditingDomain()));
-            // TODO Combobox braucht items (über EMF)
-
+            addPage(new JobPage(this, getToolkit(), getEditingDomain()));
         }
         catch (PartInitException e)
         {
