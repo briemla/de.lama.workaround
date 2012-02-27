@@ -4,22 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.databinding.property.value.IValueProperty;
-import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
-public class FeatureColumnMapping
+public class ColumnPropertyMapping
 {
 
-    private final List<ColumnFeature> columnFeatures;
+    private final List<ColumnProperty> columnFeatures;
 
-    public FeatureColumnMapping()
+    public ColumnPropertyMapping()
     {
-        this.columnFeatures = new ArrayList<ColumnFeature>();
+        this.columnFeatures = new ArrayList<ColumnProperty>();
     }
 
-    public void put(String columnTitle, EStructuralFeature feature)
+    public void put(String columnTitle, IValueProperty property)
     {
-        ColumnFeature element = new ColumnFeature(columnTitle, feature);
+        ColumnProperty element = new ColumnProperty(columnTitle, property);
         columnFeatures.add(element);
     }
 
@@ -31,7 +29,7 @@ public class FeatureColumnMapping
         }
         for (int index = 0; index < columnFeatures.size(); index++)
         {
-            ColumnFeature columnFeature = columnFeatures.get(index);
+            ColumnProperty columnFeature = columnFeatures.get(index);
             String title = columnFeature.getTitle();
             if (columnFeature.equals(title))
             {
@@ -44,7 +42,7 @@ public class FeatureColumnMapping
     public List<String> titles()
     {
         List<String> titles = new ArrayList<String>();
-        for (ColumnFeature element : columnFeatures)
+        for (ColumnProperty element : columnFeatures)
         {
             titles.add(element.getTitle());
         }
@@ -53,13 +51,12 @@ public class FeatureColumnMapping
 
     public IValueProperty[] properties()
     {
-        List<EStructuralFeature> features = new ArrayList<EStructuralFeature>();
-        for (ColumnFeature element : columnFeatures)
+        List<IValueProperty> properties = new ArrayList<IValueProperty>();
+        for (ColumnProperty element : columnFeatures)
         {
-            features.add(element.getFeature());
+            properties.add(element.getProperty());
         }
-        EStructuralFeature[] featureArray = features.toArray(new EStructuralFeature[0]);
-        return EMFProperties.values(featureArray);
+        return properties.toArray(new IValueProperty[properties.size()]);
     }
 
 }

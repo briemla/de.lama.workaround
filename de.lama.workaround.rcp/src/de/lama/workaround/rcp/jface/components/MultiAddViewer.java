@@ -23,14 +23,16 @@ public class MultiAddViewer extends ItemPropertiesViewer
         Composite container = createContainerOn(parent, 3);
         createDescriptionOn(container);
 
-        TableViewer to = new TableViewer(container, SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE | SWT.FULL_SELECTION);
+        TableViewer to = new TableViewer(container, SWT.V_SCROLL | SWT.H_SCROLL | SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE
+                | SWT.FULL_SELECTION);
         to.getControl().setLayoutData(fillBoth());
         addColumnsTo(to);
 
         MultiAddButtonGroup buttonGroup = new MultiAddButtonGroup();
         buttonGroup.with(toolkit()).on(container);
 
-        TableViewer from = new TableViewer(container, SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE | SWT.FULL_SELECTION);
+        TableViewer from = new TableViewer(container, SWT.V_SCROLL | SWT.H_SCROLL | SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE
+                | SWT.FULL_SELECTION);
         from.getControl().setLayoutData(fillBoth());
         addColumnsTo(from);
         bind(from);

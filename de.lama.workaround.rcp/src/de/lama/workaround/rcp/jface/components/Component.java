@@ -42,7 +42,7 @@ public abstract class Component
     protected void createDescriptionOn(Composite parent)
     {
         Label description = toolkit.createLabel(parent, description());
-        GridData descriptionData = new GridData(SWT.FILL, SWT.TOP, true, false);
+        GridData descriptionData = fillHorizontal();
         GridLayout parentLayout = (GridLayout) parent.getLayout();
         descriptionData.horizontalSpan = parentLayout.numColumns;
         description.setLayoutData(descriptionData);
@@ -58,9 +58,8 @@ public abstract class Component
         Composite container = toolkit.createComposite(parent);
         GridLayout layout = new GridLayout();
         layout.numColumns = columnCount;
-        layout.makeColumnsEqualWidth = false;
         container.setLayout(layout);
-        container.setLayoutData(fillHorizontal());
+        container.setLayoutData(fillBoth());
         return container;
     }
 

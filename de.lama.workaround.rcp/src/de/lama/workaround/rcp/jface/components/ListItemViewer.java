@@ -23,7 +23,7 @@ public class ListItemViewer extends ItemPropertyViewer
         Composite container = createContainerOn(parent);
         createDescriptionOn(container);
 
-        ListViewer list = new ListViewer(container, SWT.FLAT | SWT.BORDER | SWT.READ_ONLY);
+        ListViewer list = new ListViewer(container, SWT.V_SCROLL | SWT.SINGLE | SWT.H_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.READ_ONLY);
         list.getControl().setLayoutData(fillBoth());
         bind(list);
         return new BuildedViewer(list);

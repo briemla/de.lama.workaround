@@ -13,6 +13,8 @@ import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
+import de.lama.workaround.rcp.jface.binder.DateWidgetBinder;
+import de.lama.workaround.rcp.jface.binder.DelayedWidgetBinder;
 import de.lama.workaround.rcp.jface.binder.MultiWidgetBinder;
 import de.lama.workaround.rcp.jface.binder.WidgetBinder;
 import de.lama.workaround.rcp.jface.listener.Save;
@@ -51,6 +53,11 @@ public abstract class DetailsPage implements IDetailsPage
         return new MultiWidgetBinder(masterObservable, editingDomain());
     }
 
+    protected WidgetBinder bindDate()
+    {
+        return new DateWidgetBinder(masterObservable, editingDomain());
+    }
+
     protected FormToolkit toolkit()
     {
         return toolkit;
@@ -59,8 +66,8 @@ public abstract class DetailsPage implements IDetailsPage
     @Override
     public void createContents(Composite parent)
     {
-        createPageContentOn(parent);
         createLayout(parent);
+        createPageContentOn(parent);
         addSaveButton(parent);
     }
 
@@ -74,9 +81,10 @@ public abstract class DetailsPage implements IDetailsPage
     private void createLayout(Composite parent)
     {
         GridLayout layout = new GridLayout();
-        layout.makeColumnsEqualWidth = true;
         parent.setLayout(layout);
     }
+
+    protected abstract void createPageContentOn(Composite parent);
 
     @Override
     public void initialize(IManagedForm form)
@@ -125,7 +133,5 @@ public abstract class DetailsPage implements IDetailsPage
     public void selectionChanged(IFormPart part, ISelection selection)
     {
     }
-
-    protected abstract void createPageContentOn(Composite parent);
 
 }

@@ -41,12 +41,12 @@ public class WidgetBinder
         this.uiProperty = uiProperty;
     }
 
-    public IObservableValue getModelMaster()
+    protected IObservableValue getModelMaster()
     {
         return modelMaster;
     }
 
-    public EditingDomain getEditingDomain()
+    protected EditingDomain getEditingDomain()
     {
         return editingDomain;
     }

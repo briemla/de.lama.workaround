@@ -6,7 +6,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
-import de.lama.workaround.rcp.pages.FeatureColumnMapping;
+import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 import de.lama.workaround.rcp.pages.details.EditPreparationPage;
 
@@ -43,12 +43,12 @@ public class PreparationMasterPage extends MasterPage
     }
 
     @Override
-    protected FeatureColumnMapping columnFeatureMapping()
+    protected ColumnPropertyMapping columnPropertyMapping()
     {
-        FeatureColumnMapping features = new FeatureColumnMapping();
-        features.put("Name", WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME);
-        features.put("Abkürzung", WorkaroundPackage.Literals.PREPARATION__ABBREVIATION);
-        return features;
+        ColumnPropertyMapping properties = new ColumnPropertyMapping();
+        properties.put("Name", createPropertyFor(WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME));
+        properties.put("Abkürzung", createPropertyFor(WorkaroundPackage.Literals.PREPARATION__ABBREVIATION));
+        return properties;
     }
 
     @Override

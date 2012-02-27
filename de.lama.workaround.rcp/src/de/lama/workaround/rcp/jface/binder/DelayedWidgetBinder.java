@@ -1,10 +1,9 @@
-package de.lama.workaround.rcp.pages.details;
+package de.lama.workaround.rcp.jface.binder;
 
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.swt.widgets.Control;
 
-import de.lama.workaround.rcp.jface.binder.WidgetBinder;
 
 public class DelayedWidgetBinder extends WidgetBinder
 {

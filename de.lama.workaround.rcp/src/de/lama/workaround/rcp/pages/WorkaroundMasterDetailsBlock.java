@@ -52,7 +52,7 @@ public abstract class WorkaroundMasterDetailsBlock extends MasterDetailsBlock
 
     protected GridData createFullScaleGridData()
     {
-        return new GridData(SWT.FILL, SWT.TOP, true, false);
+        return new GridData(SWT.FILL, SWT.FILL, true, true);
     }
 
 }

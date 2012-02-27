@@ -6,7 +6,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
-import de.lama.workaround.rcp.pages.FeatureColumnMapping;
+import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 import de.lama.workaround.rcp.pages.details.EditPersonPage;
 
@@ -43,12 +43,12 @@ public class PersonMasterPage extends MasterPage
     }
 
     @Override
-    protected FeatureColumnMapping columnFeatureMapping()
+    protected ColumnPropertyMapping columnPropertyMapping()
     {
-        FeatureColumnMapping features = new FeatureColumnMapping();
-        features.put("Nachname", WorkaroundPackage.Literals.PERSON__LAST_NAME);
-        features.put("Vorname", WorkaroundPackage.Literals.PERSON__FIRST_NAME);
-        return features;
+        ColumnPropertyMapping properties = new ColumnPropertyMapping();
+        properties.put("Nachname", createPropertyFor(WorkaroundPackage.Literals.PERSON__LAST_NAME));
+        properties.put("Vorname", createPropertyFor(WorkaroundPackage.Literals.PERSON__FIRST_NAME));
+        return properties;
     }
 
     @Override

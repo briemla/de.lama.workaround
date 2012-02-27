@@ -6,7 +6,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
-import de.lama.workaround.rcp.pages.FeatureColumnMapping;
+import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 import de.lama.workaround.rcp.pages.details.EditMachinePage;
 
@@ -43,11 +43,11 @@ public class MachineMasterPage extends MasterPage
     }
 
     @Override
-    protected FeatureColumnMapping columnFeatureMapping()
+    protected ColumnPropertyMapping columnPropertyMapping()
     {
-        FeatureColumnMapping features = new FeatureColumnMapping();
-        features.put("Beschreibung", WorkaroundPackage.Literals.MACHINE__DESCRIPTION);
-        return features;
+        ColumnPropertyMapping properties = new ColumnPropertyMapping();
+        properties.put("Beschreibung", createPropertyFor(WorkaroundPackage.Literals.MACHINE__DESCRIPTION));
+        return properties;
     }
 
     @Override

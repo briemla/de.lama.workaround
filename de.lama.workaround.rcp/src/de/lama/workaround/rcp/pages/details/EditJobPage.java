@@ -10,6 +10,7 @@ import org.eclipse.swt.widgets.Composite;
 
 import workaround.Workaround;
 import workaround.WorkaroundPackage;
+import de.lama.workaround.rcp.jface.components.DateChooser;
 import de.lama.workaround.rcp.jface.components.ListItemViewer;
 import de.lama.workaround.rcp.jface.components.MultiAddViewer;
 import de.lama.workaround.rcp.jface.components.TextField;
@@ -35,34 +36,34 @@ public class EditJobPage extends DetailsPage
 
     private void createStartDriveDateOn(Composite parent)
     {
-        TextField textField = new TextField();
+        DateChooser date = new DateChooser();
         String startDriveDate = "Startfahrdatum";
         EStructuralFeature model = WorkaroundPackage.Literals.JOB__START_DRIVE_DATE;
-        textField.build(startDriveDate).with(toolkit()).on(parent).and(bindDelayed()).to(model);
+        date.build(startDriveDate).with(toolkit()).on(parent).and(bindDate()).to(model);
     }
 
     private void createStartDateOn(Composite parent)
     {
-        TextField textField = new TextField();
+        DateChooser date = new DateChooser();
         String startDate = "Startdatum";
         EStructuralFeature model = WorkaroundPackage.Literals.JOB__START_DATE;
-        textField.build(startDate).with(toolkit()).on(parent).and(bindDelayed()).to(model);
+        date.build(startDate).with(toolkit()).on(parent).and(bindDate()).to(model);
     }
 
     private void createEndDateOn(Composite parent)
     {
-        TextField textField = new TextField();
+        DateChooser date = new DateChooser();
         String endDate = "Enddatum";
         EStructuralFeature model = WorkaroundPackage.Literals.JOB__END_DATE;
-        textField.build(endDate).with(toolkit()).on(parent).and(bindDelayed()).to(model);
+        date.build(endDate).with(toolkit()).on(parent).and(bindDate()).to(model);
     }
 
     private void createEndDriveDateOn(Composite parent)
     {
-        TextField textField = new TextField();
+        DateChooser date = new DateChooser();
         String endDriveDate = "Endfahrdatum";
         EStructuralFeature model = WorkaroundPackage.Literals.JOB__END_DRIVE_DATE;
-        textField.build(endDriveDate).with(toolkit()).on(parent).and(bindDelayed()).to(model);
+        date.build(endDriveDate).with(toolkit()).on(parent).and(bindDate()).to(model);
     }
 
     private void createOperationOn(Composite parent)

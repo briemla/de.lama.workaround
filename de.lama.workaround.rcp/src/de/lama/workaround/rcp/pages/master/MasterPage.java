@@ -1,7 +1,10 @@
 package de.lama.workaround.rcp.pages.master;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.emf.databinding.EMFObservables;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -10,6 +13,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -27,7 +31,7 @@ import workaround.WorkaroundFactory;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.jface.listener.CreateElement;
 import de.lama.workaround.rcp.jface.listener.RemoveElement;
-import de.lama.workaround.rcp.pages.FeatureColumnMapping;
+import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.WorkaroundMasterDetailsBlock;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 
@@ -45,7 +49,8 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
     {
         final Composite sectionContent = createSectionOn(parent);
         final TableViewer masterTable = createTable(managedForm, sectionContent);
-        ViewerSupport.bind(masterTable, masterInput(), columnFeatureMapping().properties());
+        masterTable.setSorter(createViewerSorter());
+        ViewerSupport.bind(masterTable, masterInput(), columnPropertyMapping().properties());
         createButtonArea(sectionContent);
     }
 
@@ -72,13 +77,12 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
 
     protected TableViewer createTable(final IManagedForm managedForm, Composite parent)
     {
-        final TableViewer masterTable = new TableViewer(parent, SWT.SINGLE | SWT.V_SCROLL | SWT.H_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
+        final TableViewer masterTable = new TableViewer(parent, SWT.V_SCROLL | SWT.SINGLE | SWT.H_SCROLL | SWT.FULL_SELECTION | SWT.BORDER);
         addColumnsTo(masterTable);
         masterTable.getControl().setLayoutData(createFullScaleGridData());
         masterTable.getTable().setHeaderVisible(true);
         setMasterObservable(masterTable);
         final SectionPart masterPart = new SectionPart(masterSection);
-        managedForm.addPart(masterPart);
         masterTable.addSelectionChangedListener(new ISelectionChangedListener()
         {
 
@@ -98,22 +102,21 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
         final Composite sectionContent = toolkit.createComposite(masterSection);
         masterSection.setClient(sectionContent);
 
-        final GridLayout parentLayout = new GridLayout();
-        parent.setLayout(parentLayout);
-
         masterSection.setLayoutData(createFullScaleGridData());
-        sectionContent.setLayoutData(createFullScaleGridData());
+        masterSection.setLayout(new GridLayout());
 
         final GridLayout contentLayout = new GridLayout();
         contentLayout.numColumns = 2;
         sectionContent.setLayout(contentLayout);
+
+        sectionContent.setLayoutData(createFullScaleGridData());
 
         return sectionContent;
     }
 
     protected void addColumnsTo(TableViewer tableViewer)
     {
-        for (String title : columnFeatureMapping().titles())
+        for (String title : columnPropertyMapping().titles())
         {
             final TableViewerColumn viewerColumn = new TableViewerColumn(tableViewer, SWT.LEFT);
             final TableColumn column = viewerColumn.getColumn();
@@ -138,13 +141,28 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
         detailsPart.registerPage(element.getClass(), detailsPage());
     }
 
+    protected IValueProperty createPropertyFor(EStructuralFeature feature)
+    {
+        return EMFProperties.value(feature);
+    }
+
+    protected IValueProperty createPropertyFor(FeaturePath path)
+    {
+        return EMFProperties.value(path);
+    }
+
     protected abstract EStructuralFeature masterFeature();
 
     protected abstract EClass masterClass();
 
     protected abstract DetailsPage detailsPage();
 
-    protected abstract FeatureColumnMapping columnFeatureMapping();
+    protected abstract ColumnPropertyMapping columnPropertyMapping();
 
     protected abstract String contentTitle();
+
+    protected ViewerSorter createViewerSorter()
+    {
+        return null;
+    }
 }

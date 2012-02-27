@@ -6,7 +6,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
-import de.lama.workaround.rcp.pages.FeatureColumnMapping;
+import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 import de.lama.workaround.rcp.pages.details.EditVehiclePage;
 
@@ -43,12 +43,12 @@ public class VehicleMasterPage extends MasterPage
     }
 
     @Override
-    protected FeatureColumnMapping columnFeatureMapping()
+    protected ColumnPropertyMapping columnPropertyMapping()
     {
-        FeatureColumnMapping features = new FeatureColumnMapping();
-        features.put("Kennzeichen", WorkaroundPackage.Literals.VEHICLE__LICENCE_NUMBER);
-        features.put("Name", WorkaroundPackage.Literals.VEHICLE__DESCRIPTION);
-        return features;
+        ColumnPropertyMapping properties = new ColumnPropertyMapping();
+        properties.put("Kennzeichen", createPropertyFor(WorkaroundPackage.Literals.VEHICLE__LICENCE_NUMBER));
+        properties.put("Name", createPropertyFor(WorkaroundPackage.Literals.VEHICLE__DESCRIPTION));
+        return properties;
     }
 
     @Override
