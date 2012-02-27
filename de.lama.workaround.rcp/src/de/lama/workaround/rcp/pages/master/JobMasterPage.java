@@ -1,8 +1,5 @@
 package de.lama.workaround.rcp.pages.master;
 
-import org.eclipse.core.databinding.property.value.IValueProperty;
-import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.viewers.ViewerSorter;
@@ -51,27 +48,15 @@ public class JobMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Startzeit", createPropertyFor(WorkaroundPackage.Literals.JOB__START_DATE));
-        properties.put("Endzeit", createPropertyFor(WorkaroundPackage.Literals.JOB__END_DATE));
-        properties.put("Tätigkeit", operationTask());
-        properties.put("Fläche", acreageName());
-        return properties;
-    }
-
-    private IValueProperty acreageName()
-    {
+        properties.put("Startzeit", WorkaroundPackage.Literals.JOB__START_DATE);
+        properties.put("Endzeit", WorkaroundPackage.Literals.JOB__END_DATE);
         EStructuralFeature jobAcreage = WorkaroundPackage.Literals.JOB__ACREAGE;
         EStructuralFeature acreageName = WorkaroundPackage.Literals.ACREAGE__ACREAGE_NAME;
-        FeaturePath path = FeaturePath.fromList(jobAcreage, acreageName);
-        return EMFProperties.value(path);
-    }
-
-    private IValueProperty operationTask()
-    {
+        properties.put("Tätigkeit", jobAcreage, acreageName);
         EStructuralFeature jobOperation = WorkaroundPackage.Literals.JOB__OPERATION;
         EStructuralFeature operationTask = WorkaroundPackage.Literals.OPERATION__TASK;
-        FeaturePath path = FeaturePath.fromList(jobOperation, operationTask);
-        return createPropertyFor(path);
+        properties.put("Fläche", jobOperation, operationTask);
+        return properties;
     }
 
     @Override

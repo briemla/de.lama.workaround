@@ -46,7 +46,7 @@ public class DistrictMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Name", createPropertyFor(WorkaroundPackage.Literals.DISTRICT__DISTRICT_NAME));
+        properties.put("Name", WorkaroundPackage.Literals.DISTRICT__DISTRICT_NAME);
         return properties;
     }
 

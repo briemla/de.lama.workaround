@@ -46,7 +46,7 @@ public class OperationMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Arbeitsvorgang", createPropertyFor(WorkaroundPackage.Literals.OPERATION__TASK));
+        properties.put("Arbeitsvorgang", WorkaroundPackage.Literals.OPERATION__TASK);
         return properties;
     }
 

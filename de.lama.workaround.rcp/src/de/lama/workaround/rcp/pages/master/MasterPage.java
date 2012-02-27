@@ -1,10 +1,7 @@
 package de.lama.workaround.rcp.pages.master;
 
 import org.eclipse.core.databinding.observable.list.IObservableList;
-import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.emf.databinding.EMFObservables;
-import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -139,16 +136,6 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
         detailsPage().initialize(getToolkit(), getEditingDomain(), getMasterObservable());
         EObject element = WorkaroundFactory.eINSTANCE.create(masterClass());
         detailsPart.registerPage(element.getClass(), detailsPage());
-    }
-
-    protected IValueProperty createPropertyFor(EStructuralFeature feature)
-    {
-        return EMFProperties.value(feature);
-    }
-
-    protected IValueProperty createPropertyFor(FeaturePath path)
-    {
-        return EMFProperties.value(path);
     }
 
     protected abstract EStructuralFeature masterFeature();

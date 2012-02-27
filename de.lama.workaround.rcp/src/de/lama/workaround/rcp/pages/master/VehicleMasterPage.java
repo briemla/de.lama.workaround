@@ -46,8 +46,8 @@ public class VehicleMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Kennzeichen", createPropertyFor(WorkaroundPackage.Literals.VEHICLE__LICENCE_NUMBER));
-        properties.put("Name", createPropertyFor(WorkaroundPackage.Literals.VEHICLE__DESCRIPTION));
+        properties.put("Kennzeichen", WorkaroundPackage.Literals.VEHICLE__LICENCE_NUMBER);
+        properties.put("Name", WorkaroundPackage.Literals.VEHICLE__DESCRIPTION);
         return properties;
     }
 

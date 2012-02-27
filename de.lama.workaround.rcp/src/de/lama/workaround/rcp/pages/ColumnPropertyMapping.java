@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.databinding.property.value.IValueProperty;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.FeaturePath;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 public class ColumnPropertyMapping
 {
@@ -15,8 +18,10 @@ public class ColumnPropertyMapping
         this.columnFeatures = new ArrayList<ColumnProperty>();
     }
 
-    public void put(String columnTitle, IValueProperty property)
+    public void put(String columnTitle, EStructuralFeature... features)
     {
+        FeaturePath path = FeaturePath.fromList(features);
+        IValueProperty property = EMFProperties.value(path);
         ColumnProperty element = new ColumnProperty(columnTitle, property);
         columnFeatures.add(element);
     }

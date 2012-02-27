@@ -46,7 +46,7 @@ public class AcreageMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Name", createPropertyFor(WorkaroundPackage.Literals.ACREAGE__ACREAGE_NAME));
+        properties.put("Name", WorkaroundPackage.Literals.ACREAGE__ACREAGE_NAME);
         return properties;
     }
 

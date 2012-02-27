@@ -46,7 +46,7 @@ public class MachineMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Beschreibung", createPropertyFor(WorkaroundPackage.Literals.MACHINE__DESCRIPTION));
+        properties.put("Beschreibung", WorkaroundPackage.Literals.MACHINE__DESCRIPTION);
         return properties;
     }
 

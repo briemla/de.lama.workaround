@@ -46,8 +46,8 @@ public class PreparationMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Name", createPropertyFor(WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME));
-        properties.put("Abkürzung", createPropertyFor(WorkaroundPackage.Literals.PREPARATION__ABBREVIATION));
+        properties.put("Name", WorkaroundPackage.Literals.PREPARATION__PREPARATION_NAME);
+        properties.put("Abkürzung", WorkaroundPackage.Literals.PREPARATION__ABBREVIATION);
         return properties;
     }
 

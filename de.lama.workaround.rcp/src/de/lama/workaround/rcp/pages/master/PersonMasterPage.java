@@ -46,8 +46,8 @@ public class PersonMasterPage extends MasterPage
     protected ColumnPropertyMapping columnPropertyMapping()
     {
         ColumnPropertyMapping properties = new ColumnPropertyMapping();
-        properties.put("Nachname", createPropertyFor(WorkaroundPackage.Literals.PERSON__LAST_NAME));
-        properties.put("Vorname", createPropertyFor(WorkaroundPackage.Literals.PERSON__FIRST_NAME));
+        properties.put("Nachname", WorkaroundPackage.Literals.PERSON__LAST_NAME);
+        properties.put("Vorname", WorkaroundPackage.Literals.PERSON__FIRST_NAME);
         return properties;
     }
 
