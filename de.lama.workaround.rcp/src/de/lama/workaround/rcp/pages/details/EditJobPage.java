@@ -78,7 +78,7 @@ public class EditJobPage extends DetailsPage
 
     private IObservableList createOperationInput()
     {
-        Workaround workaround = editingDomain().getWorkaround();
+        Workaround workaround = getEditingDomain().getWorkaround();
         EReference feature = WorkaroundPackage.Literals.WORKAROUND__OPERATION_LIST;
         return EMFObservables.observeList(workaround, feature);
     }
@@ -100,7 +100,7 @@ public class EditJobPage extends DetailsPage
 
     private IObservableList createAcreageInput()
     {
-        Workaround workaround = editingDomain().getWorkaround();
+        Workaround workaround = getEditingDomain().getWorkaround();
         EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__ACREAGE_LIST;
         return EMFObservables.observeList(workaround, feature);
     }
@@ -122,7 +122,7 @@ public class EditJobPage extends DetailsPage
 
     private IObservableList createPersonInput()
     {
-        Workaround workaround = editingDomain().getWorkaround();
+        Workaround workaround = getEditingDomain().getWorkaround();
         EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__PERSON_LIST;
         return EMFObservables.observeList(workaround, feature);
     }
@@ -147,7 +147,7 @@ public class EditJobPage extends DetailsPage
 
     private IObservableList createMachineInput()
     {
-        Workaround workaround = editingDomain().getWorkaround();
+        Workaround workaround = getEditingDomain().getWorkaround();
         EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__MACHINE_LIST;
         return EMFObservables.observeList(workaround, feature);
     }
@@ -171,7 +171,7 @@ public class EditJobPage extends DetailsPage
 
     private IObservableList createVehicleInput()
     {
-        Workaround workaround = editingDomain().getWorkaround();
+        Workaround workaround = getEditingDomain().getWorkaround();
         EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__VEHICLE_LIST;
         return EMFObservables.observeList(workaround, feature);
     }
@@ -195,7 +195,7 @@ public class EditJobPage extends DetailsPage
 
     private IObservableList createPreparationInput()
     {
-        Workaround workaround = editingDomain().getWorkaround();
+        Workaround workaround = getEditingDomain().getWorkaround();
         EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__PREPARATION_LIST;
         return EMFObservables.observeList(workaround, feature);
     }

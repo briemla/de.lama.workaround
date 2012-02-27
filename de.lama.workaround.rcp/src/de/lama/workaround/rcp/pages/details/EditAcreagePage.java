@@ -50,14 +50,14 @@ public class EditAcreagePage extends DetailsPage
         list.build(district).with(toolkit()).on(parent).and(bind()).to(model);
     }
 
-    protected IValueProperty createDistrictProperty()
+    private IValueProperty createDistrictProperty()
     {
         return EMFProperties.value(WorkaroundPackage.Literals.DISTRICT__DISTRICT_NAME);
     }
 
-    protected IObservableList createDistrictObservable()
+    private IObservableList createDistrictObservable()
     {
-        EObject master = editingDomain().getWorkaround();
+        EObject master = getEditingDomain().getWorkaround();
         EStructuralFeature feature = WorkaroundPackage.Literals.WORKAROUND__DISTRICT_LIST;
         return EMFObservables.observeList(master, feature);
     }

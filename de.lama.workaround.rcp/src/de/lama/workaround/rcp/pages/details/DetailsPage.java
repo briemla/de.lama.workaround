@@ -33,29 +33,29 @@ public abstract class DetailsPage implements IDetailsPage
         this.masterObservable = masterObservable;
     }
 
-    protected WorkaroundEditingDomain editingDomain()
+    protected WorkaroundEditingDomain getEditingDomain()
     {
         return editingDomain;
     }
 
     protected WidgetBinder bind()
     {
-        return new WidgetBinder(masterObservable, editingDomain());
+        return new WidgetBinder(masterObservable, getEditingDomain());
     }
 
     protected WidgetBinder bindDelayed()
     {
-        return new DelayedWidgetBinder(masterObservable, editingDomain());
+        return new DelayedWidgetBinder(masterObservable, getEditingDomain());
     }
 
     protected WidgetBinder bindMulti()
     {
-        return new MultiWidgetBinder(masterObservable, editingDomain());
+        return new MultiWidgetBinder(masterObservable, getEditingDomain());
     }
 
     protected WidgetBinder bindDate()
     {
-        return new DateWidgetBinder(masterObservable, editingDomain());
+        return new DateWidgetBinder(masterObservable, getEditingDomain());
     }
 
     protected FormToolkit toolkit()
