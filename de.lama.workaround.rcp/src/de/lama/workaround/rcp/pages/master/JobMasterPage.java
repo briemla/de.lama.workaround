@@ -2,11 +2,13 @@ package de.lama.workaround.rcp.pages.master;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import workaround.WorkaroundPackage;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
+import de.lama.workaround.rcp.jface.provider.JobMasterContentProvider;
 import de.lama.workaround.rcp.jface.sorter.JobSorter;
 import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
@@ -20,6 +22,7 @@ public class JobMasterPage extends MasterPage
     public JobMasterPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain)
     {
         super(toolkit, editingDomain);
+        activateFilter();
     }
 
     @Override
@@ -69,6 +72,12 @@ public class JobMasterPage extends MasterPage
     protected ViewerSorter createViewerSorter()
     {
         return new JobSorter();
+    }
+
+    @Override
+    protected ObservableListContentProvider createContentProvider()
+    {
+        return new JobMasterContentProvider();
     }
 
 }

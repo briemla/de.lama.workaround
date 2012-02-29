@@ -32,6 +32,7 @@ import de.lama.workaround.rcp.pages.combined.OperationPage;
 import de.lama.workaround.rcp.pages.combined.PersonPage;
 import de.lama.workaround.rcp.pages.combined.PreparationPage;
 import de.lama.workaround.rcp.pages.combined.VehiclePage;
+import de.lama.workaround.rcp.pages.overview.PersonOverviewPage;
 
 public class WorkaroundEditor extends FormEditor implements IEditingDomainProvider
 {
@@ -65,6 +66,7 @@ public class WorkaroundEditor extends FormEditor implements IEditingDomainProvid
 
         try
         {
+            addPage(new PersonOverviewPage(this, getToolkit(), getEditingDomain()));
             addPage(new JobPage(this, getToolkit(), getEditingDomain()));
             addPage(new PersonPage(this, getToolkit(), getEditingDomain()));
             addPage(new OperationPage(this, getToolkit(), getEditingDomain()));
