@@ -59,7 +59,7 @@ public abstract class Component
         GridLayout layout = new GridLayout();
         layout.numColumns = columnCount;
         container.setLayout(layout);
-        container.setLayoutData(fillBoth());
+        container.setLayoutData(fillHorizontal());
         return container;
     }
 

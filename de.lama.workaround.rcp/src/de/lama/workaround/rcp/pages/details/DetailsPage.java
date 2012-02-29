@@ -11,6 +11,7 @@ import org.eclipse.ui.forms.IDetailsPage;
 import org.eclipse.ui.forms.IFormPart;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.Section;
 
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.jface.binder.DateWidgetBinder;
@@ -67,8 +68,27 @@ public abstract class DetailsPage implements IDetailsPage
     public void createContents(Composite parent)
     {
         createLayout(parent);
-        createPageContentOn(parent);
-        addSaveButton(parent);
+        Composite container = createSectionOn(parent);
+        createPageContentOn(container);
+        addSaveButton(container);
+    }
+
+    protected Composite createSectionOn(Composite parent)
+    {
+        Section detailsSection = toolkit.createSection(parent, SWT.FLAT | Section.TWISTIE | Section.EXPANDED);
+        detailsSection.setText("Detail Einstellungen");
+        final Composite sectionContent = toolkit.createComposite(detailsSection);
+        detailsSection.setClient(sectionContent);
+
+        detailsSection.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+        detailsSection.setLayout(new GridLayout());
+
+        final GridLayout contentLayout = new GridLayout();
+        sectionContent.setLayout(contentLayout);
+
+        sectionContent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+        return sectionContent;
     }
 
     private void addSaveButton(Composite parent)

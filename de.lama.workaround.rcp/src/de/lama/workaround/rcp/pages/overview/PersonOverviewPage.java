@@ -61,7 +61,8 @@ public class PersonOverviewPage extends FormPage
         TableViewer viewer = new TableViewer(contentBody);
         year.addSelectionListener(new YearFilteredListener(viewer));
         viewer.setSorter(new PersonTimeSorter());
-        viewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+        viewer.getTable().setHeaderVisible(true);
+        viewer.getTable().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
         ColumnPropertyMapping mapping = createPersonMapping();
         addColumnsTo(viewer, mapping);
         bind(viewer, createJobList(), mapping.properties());
