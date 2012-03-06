@@ -12,7 +12,8 @@ public class JobSorter extends ViewerSorter
     private static final int EQUAL = 0;
 
     private static final int DESC = -1;
-    private static final int ASC = -1;
+
+    // private static final int ASC = -1;
 
     @Override
     public int compare(Viewer viewer, Object element1, Object element2)

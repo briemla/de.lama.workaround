@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
-import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredViewer;
@@ -38,6 +37,7 @@ import de.lama.workaround.rcp.WorkaroundEditingDomain;
 import de.lama.workaround.rcp.jface.listener.CreateElement;
 import de.lama.workaround.rcp.jface.listener.RemoveElement;
 import de.lama.workaround.rcp.jface.listener.YearFilteredListener;
+import de.lama.workaround.rcp.jface.provider.WorkaroundObservableMapLabelProvider;
 import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.WorkaroundMasterDetailsBlock;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
@@ -115,7 +115,7 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
             viewer.setInput(null);
         }
         viewer.setContentProvider(contentProvider);
-        viewer.setLabelProvider(new ObservableMapLabelProvider(Properties.observeEach(contentProvider.getKnownElements(), labelProperties)));
+        viewer.setLabelProvider(new WorkaroundObservableMapLabelProvider(Properties.observeEach(contentProvider.getKnownElements(), labelProperties)));
         if (input != null)
         {
             viewer.setInput(input);
