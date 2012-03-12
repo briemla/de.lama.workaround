@@ -3,7 +3,6 @@ package de.lama.workaround.rcp.jface.binder;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.databinding.EMFObservables;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 
@@ -45,8 +44,7 @@ public class MultiWidgetBinder extends WidgetBinder
     {
         this.feature = feature;
         IObservableValue modelMaster = getModelMaster();
-        EObject owner = (EObject) modelMaster.getValue();
-        return EMFObservables.observeList(owner, feature);
+        return EMFObservables.observeDetailList(modelMaster.getRealm(), modelMaster, feature);
     }
 
     public void setElementProvider(IObservableValue elementProvider)

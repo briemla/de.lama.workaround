@@ -3,7 +3,6 @@
 
 <product name="Workaround" id="de.lama.workaround.rcp.workaroundProduct" application="de.lama.workaround.rcp.application" version="0.0.1" useFeatures="false" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -19,11 +18,11 @@
       startupForegroundColor="80CDFF" />
    <launcher name="workaround">
       <solaris/>
-      <win useIco="false">
+      <win useIco="true">
+         <ico path="/de.lama.workaround.rcp/icons/workaround.ico"/>
          <bmp/>
       </win>
    </launcher>
-
 
    <vm>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</windows>
