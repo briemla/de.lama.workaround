@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredViewer;
@@ -34,6 +35,7 @@ import org.eclipse.ui.forms.widgets.Section;
 import workaround.Workaround;
 import workaround.WorkaroundFactory;
 import de.lama.workaround.rcp.WorkaroundEditingDomain;
+import de.lama.workaround.rcp.jface.listener.ChangeSelectionListener;
 import de.lama.workaround.rcp.jface.listener.CreateElement;
 import de.lama.workaround.rcp.jface.listener.RemoveElement;
 import de.lama.workaround.rcp.jface.listener.YearFilteredListener;
@@ -42,12 +44,13 @@ import de.lama.workaround.rcp.pages.ColumnPropertyMapping;
 import de.lama.workaround.rcp.pages.WorkaroundMasterDetailsBlock;
 import de.lama.workaround.rcp.pages.details.DetailsPage;
 
-public abstract class MasterPage extends WorkaroundMasterDetailsBlock
+public abstract class MasterPage extends WorkaroundMasterDetailsBlock implements ChangeSelectionListener
 {
     private static final int COLUMN_COUNT = 2;
     private Section masterSection;
     private boolean filtered = false;
     private Combo filter;
+    private TableViewer masterTable;
 
     public MasterPage(FormToolkit toolkit, WorkaroundEditingDomain editingDomain)
     {
@@ -59,7 +62,7 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
     {
         final Composite sectionContent = createSectionOn(parent);
         createFilterContent(sectionContent);
-        final TableViewer masterTable = createTable(managedForm, sectionContent);
+        masterTable = createTable(managedForm, sectionContent);
         addFilterListener(masterTable);
         masterTable.setSorter(createViewerSorter());
         bind(masterTable, masterInput(), columnPropertyMapping().properties());
@@ -131,7 +134,7 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
     {
         Composite buttonArea = getToolkit().createComposite(parent);
         Button add = getToolkit().createButton(buttonArea, "Neu", SWT.PUSH);
-        add.addSelectionListener(new CreateElement(getEditingDomain(), getEditingDomain().getWorkaround(), masterClass(), masterFeature()));
+        add.addSelectionListener(new CreateElement(getEditingDomain(), getEditingDomain().getWorkaround(), masterClass(), masterFeature(), this));
 
         GridData addData = new GridData(SWT.FILL, SWT.TOP, false, false);
         add.setLayoutData(addData);
@@ -170,9 +173,9 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
 
     protected Composite createSectionOn(Composite parent)
     {
-        masterSection = toolkit.createSection(parent, SWT.FLAT | Section.TWISTIE | Section.EXPANDED);
+        masterSection = getToolkit().createSection(parent, SWT.FLAT | Section.TWISTIE | Section.EXPANDED);
         masterSection.setText(contentTitle());
-        final Composite sectionContent = toolkit.createComposite(masterSection);
+        final Composite sectionContent = getToolkit().createComposite(masterSection);
         masterSection.setClient(sectionContent);
 
         masterSection.setLayoutData(createFullScaleGridData());
@@ -217,6 +220,12 @@ public abstract class MasterPage extends WorkaroundMasterDetailsBlock
     protected void activateFilter()
     {
         filtered = true;
+    }
+
+    @Override
+    public void changeSelection(ISelection selection)
+    {
+        masterTable.setSelection(selection);
     }
 
     protected abstract EStructuralFeature masterFeature();

@@ -42,7 +42,15 @@ public class JobSorter extends ViewerSorter
     private int compareStartDateOf(Job job1, Job job2)
     {
         Date startDate1 = job1.getStartDate();
+        if (startDate1 == null)
+        {
+            return 1;
+        }
         Date startDate2 = job2.getStartDate();
+        if (startDate2 == null)
+        {
+            return -1;
+        }
         return startDate1.compareTo(startDate2);
     }
 

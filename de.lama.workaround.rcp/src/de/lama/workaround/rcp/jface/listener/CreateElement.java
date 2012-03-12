@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
@@ -18,13 +19,16 @@ public class CreateElement extends SelectionAdapter
     private final EObject owner;
     private final EClass elementClass;
     private final EStructuralFeature feature;
+    private final ChangeSelectionListener listener;
 
-    public CreateElement(final EditingDomain editingDomain, final EObject owner, final EClass elementClass, final EStructuralFeature feature)
+    public CreateElement(final EditingDomain editingDomain, final EObject owner, final EClass elementClass, final EStructuralFeature feature,
+            ChangeSelectionListener listener)
     {
         this.editingDomain = editingDomain;
         this.owner = owner;
         this.elementClass = elementClass;
         this.feature = feature;
+        this.listener = listener;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class CreateElement extends SelectionAdapter
         if (add != null)
         {
             editingDomain.getCommandStack().execute(add);
+            listener.changeSelection(new StructuredSelection(element));
         }
     }
 

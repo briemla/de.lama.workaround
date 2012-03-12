@@ -15,9 +15,9 @@ import de.lama.workaround.rcp.WorkaroundEditingDomain;
 public abstract class WorkaroundMasterDetailsBlock extends MasterDetailsBlock
 {
 
-    protected final FormToolkit toolkit;
-    protected final WorkaroundEditingDomain editingDomain;
-    protected IViewerObservableValue masterObservable;
+    private final FormToolkit toolkit;
+    private final WorkaroundEditingDomain editingDomain;
+    private IViewerObservableValue masterObservable;
 
     public WorkaroundMasterDetailsBlock(final FormToolkit toolkit, final WorkaroundEditingDomain editingDomain)
     {

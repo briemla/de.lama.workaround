@@ -42,7 +42,16 @@ public class RemoveElement extends SelectionAdapter
             if (remove != null)
             {
                 editingDomain.getCommandStack().execute(remove);
+                triggerSave();
             }
+        }
+    }
+
+    private void triggerSave()
+    {
+        if (ownerMaster == null)
+        {
+            SaveAction.execute();
         }
     }
 
