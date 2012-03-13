@@ -27,7 +27,7 @@ public class WorkaroundObservableMapLabelProvider extends ObservableMapLabelProv
                 if (result instanceof Date)
                 {
                     Date date = (Date) result;
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy - hh:mm");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy - HH:mm");
                     return dateFormat.format(date);
                 }
             }
