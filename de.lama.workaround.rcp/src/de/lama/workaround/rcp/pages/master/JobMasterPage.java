@@ -55,10 +55,10 @@ public class JobMasterPage extends MasterPage
         properties.put("Endzeit", WorkaroundPackage.Literals.JOB__END_DATE);
         EStructuralFeature jobAcreage = WorkaroundPackage.Literals.JOB__ACREAGE;
         EStructuralFeature acreageName = WorkaroundPackage.Literals.ACREAGE__ACREAGE_NAME;
-        properties.put("Tätigkeit", jobAcreage, acreageName);
+        properties.put("Fläche", jobAcreage, acreageName);
         EStructuralFeature jobOperation = WorkaroundPackage.Literals.JOB__OPERATION;
         EStructuralFeature operationTask = WorkaroundPackage.Literals.OPERATION__TASK;
-        properties.put("Fläche", jobOperation, operationTask);
+        properties.put("Tätigkeit", jobOperation, operationTask);
         return properties;
     }
 
