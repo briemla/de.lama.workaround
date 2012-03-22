@@ -12,14 +12,15 @@ public class AddElement extends SelectionAdapter
 {
 
     private final EditingDomain editingDomain;
-    private final Object owner;
+    private final IObservableValue ownerProvider;
     private final IObservableValue elementProvider;
     private final EStructuralFeature feature;
 
-    public AddElement(final EditingDomain editingDomain, final Object owner, final IObservableValue elementProvider, final EStructuralFeature feature)
+    public AddElement(final EditingDomain editingDomain, final IObservableValue ownerProvider, final IObservableValue elementProvider,
+            final EStructuralFeature feature)
     {
         this.editingDomain = editingDomain;
-        this.owner = owner;
+        this.ownerProvider = ownerProvider;
         this.elementProvider = elementProvider;
         this.feature = feature;
     }
@@ -27,6 +28,7 @@ public class AddElement extends SelectionAdapter
     @Override
     public void widgetSelected(SelectionEvent e)
     {
+        Object owner = ownerProvider.getValue();
         Object element = elementProvider.getValue();
         Command add = AddCommand.create(editingDomain, owner, feature, element);
         if (add != null)
