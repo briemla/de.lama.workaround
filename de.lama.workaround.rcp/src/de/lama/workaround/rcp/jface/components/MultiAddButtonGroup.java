@@ -1,6 +1,7 @@
 package de.lama.workaround.rcp.jface.components;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
@@ -18,9 +19,15 @@ public class MultiAddButtonGroup extends Component
     public BuildedComponent on(Composite parent)
     {
         Composite container = createContainerOn(parent);
+        container.setLayoutData(buttonLayoudData());
         addButton = toolkit().createButton(container, "<<", SWT.PUSH);
         removeButton = toolkit().createButton(container, ">>", SWT.PUSH);
         return null;
+    }
+
+    private GridData buttonLayoudData()
+    {
+        return new GridData(SWT.BEGINNING, SWT.TOP, false, false);
     }
 
     public void initialize(AddElement action)
