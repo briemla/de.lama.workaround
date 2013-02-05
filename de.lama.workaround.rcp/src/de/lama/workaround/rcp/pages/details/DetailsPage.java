@@ -84,6 +84,7 @@ public abstract class DetailsPage implements IDetailsPage
         detailsSection.setLayout(new GridLayout());
 
         final GridLayout contentLayout = new GridLayout();
+        contentLayout.numColumns = 2;
         sectionContent.setLayout(contentLayout);
 
         sectionContent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));

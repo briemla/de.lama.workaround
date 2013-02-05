@@ -50,16 +50,18 @@ public abstract class Component
 
     protected Composite createContainerOn(Composite parent)
     {
-        return createContainerOn(parent, 1);
+        return createContainerOn(parent, 1, 1);
     }
 
-    protected Composite createContainerOn(Composite parent, Integer columnCount)
+    protected Composite createContainerOn(Composite parent, Integer columnCount, Integer horizontalSpan)
     {
         Composite container = toolkit.createComposite(parent);
         GridLayout layout = new GridLayout();
         layout.numColumns = columnCount;
         container.setLayout(layout);
-        container.setLayoutData(fillHorizontal());
+        GridData fillHorizontal = fillHorizontal();
+        fillHorizontal.horizontalSpan = horizontalSpan;
+        container.setLayoutData(fillHorizontal);
         return container;
     }
 

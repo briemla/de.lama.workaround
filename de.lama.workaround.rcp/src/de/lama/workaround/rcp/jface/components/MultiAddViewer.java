@@ -4,6 +4,7 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
 import de.lama.workaround.rcp.jface.components.builded.BuildedComponent;
@@ -20,12 +21,14 @@ public class MultiAddViewer extends ItemPropertiesViewer
     @Override
     public BuildedComponent on(Composite parent)
     {
-        Composite container = createContainerOn(parent, 3);
+        Composite container = createContainerOn(parent, 3, 2);
         createDescriptionOn(container);
 
         TableViewer to = new TableViewer(container, SWT.V_SCROLL | SWT.H_SCROLL | SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE
                 | SWT.FULL_SELECTION);
-        to.getControl().setLayoutData(fillBoth());
+        GridData fillBoth = fillBoth();
+        fillBoth.heightHint = 80;
+        to.getControl().setLayoutData(fillBoth);
         addColumnsTo(to);
 
         MultiAddButtonGroup buttonGroup = new MultiAddButtonGroup();
@@ -33,7 +36,9 @@ public class MultiAddViewer extends ItemPropertiesViewer
 
         TableViewer from = new TableViewer(container, SWT.V_SCROLL | SWT.H_SCROLL | SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE
                 | SWT.FULL_SELECTION);
-        from.getControl().setLayoutData(fillBoth());
+        fillBoth = fillBoth();
+        fillBoth.heightHint = 80;
+        from.getControl().setLayoutData(fillBoth);
         addColumnsTo(from);
         bind(from);
 

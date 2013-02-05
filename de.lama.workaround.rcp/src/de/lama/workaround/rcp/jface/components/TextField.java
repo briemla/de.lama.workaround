@@ -15,7 +15,7 @@ public class TextField extends Component
     @Override
     public BuildedPrimitive on(Composite parent)
     {
-        Composite container = createContainerOn(parent);
+        Composite container = createContainerOn(parent, 1, 2);
         createDescriptionOn(container);
         Text textField = toolkit().createText(container, EMPTY, SWT.FLAT);
         textField.setLayoutData(fillHorizontal());

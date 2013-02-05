@@ -4,6 +4,7 @@ import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.jface.viewers.ListViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 
 import de.lama.workaround.rcp.jface.components.builded.BuildedComponent;
@@ -24,7 +25,9 @@ public class ListItemViewer extends ItemPropertyViewer
         createDescriptionOn(container);
 
         ListViewer list = new ListViewer(container, SWT.V_SCROLL | SWT.SINGLE | SWT.H_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.READ_ONLY);
-        list.getControl().setLayoutData(fillBoth());
+        GridData fillBoth = fillBoth();
+        fillBoth.heightHint = 80;
+        list.getControl().setLayoutData(fillBoth);
         bind(list);
         return new BuildedViewer(list);
     }
