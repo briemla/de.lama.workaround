@@ -37,7 +37,6 @@
       <plugin id="de.lama.workaround.model"/>
       <plugin id="de.lama.workaround.model.edit"/>
       <plugin id="de.lama.workaround.rcp"/>
-      <plugin id="de.lama.workaround.rcp.test" fragment="true"/>
       <plugin id="javax.persistence"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.log4j"/>
