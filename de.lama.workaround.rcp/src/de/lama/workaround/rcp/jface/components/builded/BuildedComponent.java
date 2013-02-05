@@ -34,4 +34,5 @@ public abstract class BuildedComponent
     }
 
     protected abstract IObservableValue createTargetObservableWith(WidgetBinder binder);
+
 }

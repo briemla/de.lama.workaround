@@ -14,6 +14,8 @@ public class MultiAddButtonGroup extends Component
 
     private Button addButton;
     private Button removeButton;
+    private AddElement addAction;
+    private RemoveElement removeAction;
 
     @Override
     public BuildedComponent on(Composite parent)
@@ -36,6 +38,7 @@ public class MultiAddButtonGroup extends Component
         {
             return;
         }
+        addAction = action;
         addButton.addSelectionListener(action);
     }
 
@@ -45,7 +48,24 @@ public class MultiAddButtonGroup extends Component
         {
             return;
         }
+        removeAction = action;
         removeButton.addSelectionListener(action);
+    }
+
+    public void add()
+    {
+        if (addAction != null)
+        {
+            addAction.execute();
+        }
+    }
+
+    public void remove()
+    {
+        if (removeAction != null)
+        {
+            removeAction.execute();
+        }
     }
 
 }

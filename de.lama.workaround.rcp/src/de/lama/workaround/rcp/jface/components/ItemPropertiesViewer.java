@@ -30,7 +30,7 @@ public abstract class ItemPropertiesViewer extends ItemViewer
         {
             final TableViewerColumn viewerColumn = new TableViewerColumn(viewer, SWT.LEFT);
             final TableColumn column = viewerColumn.getColumn();
-            column.setWidth(175);
+            column.setWidth(100);
             column.setMoveable(false);
             column.setResizable(true);
         }

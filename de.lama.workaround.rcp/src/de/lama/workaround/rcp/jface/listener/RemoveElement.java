@@ -33,6 +33,11 @@ public class RemoveElement extends SelectionAdapter
     @Override
     public void widgetSelected(SelectionEvent e)
     {
+        execute();
+    }
+
+    public void execute()
+    {
         Object value = elementMaster.getValue();
         if (value instanceof EObject)
         {
@@ -63,4 +68,5 @@ public class RemoveElement extends SelectionAdapter
         }
         return ownerMaster.getValue();
     }
+
 }

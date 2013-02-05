@@ -3,6 +3,7 @@ package de.lama.workaround.rcp.jface.components;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -30,9 +31,12 @@ public class MultiAddViewer extends ItemPropertiesViewer
         fillBoth.heightHint = 80;
         to.getControl().setLayoutData(fillBoth);
         addColumnsTo(to);
+        to.setSorter(viewerSorter());
 
         MultiAddButtonGroup buttonGroup = new MultiAddButtonGroup();
         buttonGroup.with(toolkit()).on(container);
+
+        to.getTable().addKeyListener(new RemoveListener(buttonGroup));
 
         TableViewer from = new TableViewer(container, SWT.V_SCROLL | SWT.H_SCROLL | SWT.FLAT | SWT.BORDER | SWT.READ_ONLY | SWT.SINGLE
                 | SWT.FULL_SELECTION);
@@ -40,9 +44,16 @@ public class MultiAddViewer extends ItemPropertiesViewer
         fillBoth.heightHint = 80;
         from.getControl().setLayoutData(fillBoth);
         addColumnsTo(from);
+        from.setSorter(viewerSorter());
+        from.getTable().addKeyListener(new AddListener(buttonGroup));
         bind(from);
 
         return new BuildedMultiAdd(to, from, buttonGroup, getViewerProperties());
+    }
+
+    private ViewerSorter viewerSorter()
+    {
+        return new ViewerSorter();
     }
 
 }

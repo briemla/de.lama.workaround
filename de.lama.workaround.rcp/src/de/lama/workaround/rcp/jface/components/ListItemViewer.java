@@ -3,6 +3,7 @@ package de.lama.workaround.rcp.jface.components;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -28,6 +29,7 @@ public class ListItemViewer extends ItemPropertyViewer
         GridData fillBoth = fillBoth();
         fillBoth.heightHint = 80;
         list.getControl().setLayoutData(fillBoth);
+        list.setSorter(new ViewerSorter());
         bind(list);
         return new BuildedViewer(list);
     }

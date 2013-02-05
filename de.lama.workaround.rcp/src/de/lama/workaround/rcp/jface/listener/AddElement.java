@@ -28,6 +28,11 @@ public class AddElement extends SelectionAdapter
     @Override
     public void widgetSelected(SelectionEvent e)
     {
+        execute();
+    }
+
+    public void execute()
+    {
         Object owner = ownerProvider.getValue();
         Object element = elementProvider.getValue();
         Command add = AddCommand.create(editingDomain, owner, feature, element);
